@@ -1,0 +1,29 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<div>
+		
+		 {% for t in tests %}
+			<div 
+					{% if tests[t].corretto %}
+						class='result-item result-item-success'
+					{% else %}
+						class='result-item result-item-error'
+					{% endif %}
+						
+				>
+				Test n. {{t}} : 
+				Output atteso {{ tests[t].atteso }} : 
+				Output reale {{ tests[t].output }} : 
+				Punti {{ tests[t].punteggio }}
+			</div>
+		 {% endfor %}
+
+		<div>
+			<strong>PUNTI TOTALI</strong> {{ punteggio }}/{{puntmax}} - <b>{{ punteggio*100/puntmax }}%</b>
+		</div>
+
+	</div>
+
+
+{% endblock %}

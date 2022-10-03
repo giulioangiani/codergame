@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Errore generico{% endblock %}
+{% block content %}
+		<div id='error_div'>
+			
+			{% if tipoinfo == 'info' %}
+				<h3>Attenzione:</h3>
+			{% else %}
+				<h3>Si è verificato un errore generico:</h3>
+			{% endif %}
+			
+			<h4>{{msg}}</h4>
+			<h5>{{specmsg}}</h5>
+
+			<div id='back'>
+				<a href='#' onClick='javascript:history.go(-1)'>indietro</a>
+			</div>
+		</div>
+{% endblock %}

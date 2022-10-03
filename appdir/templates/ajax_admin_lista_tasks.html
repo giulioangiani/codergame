@@ -1,0 +1,50 @@
+{% extends "ajax.html" %}
+{% block content %}
+	<button type="button" id='add-button' class="btn btn-info mb-3 editobject"
+		fn='admin/task/new' _object_id='-1'
+		>Nuovo Task</button>
+	<table id='table_tasks' class='table table-striped'>
+		<thead>
+			<tr>
+				<th>Titolo</th>
+				<th>Sottotitolo</th>
+				<th>Difficolta</th>
+				<th>TestCases</th>
+				<th>Punt.Max</th>
+				<th>Gruppi abilitati</th>
+				<th>Categoria</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for t in tasks %}
+			<tr>
+				<td>{{t.titolo}}</td>
+				<td>{{t.sottotitolo}}</td>
+				<td class='text-center'>{{t.difficolta}}</td>
+				<td class='text-center'>{{t.testcases|count}}</td>
+				<td class='text-center'>{{t.maxpoints}}</td>
+				<td>
+					{% for g in t.gruppi %}{{g.nomegruppo}}<br>{% endfor %}
+				</td>
+				<td>{{t.categoria.nomecategoria}}</td>
+				<td>
+					<span class='fa fa-edit fa-2x editobject'
+						fn='admin/task/edit/'
+						_object_id='{{t.id}}'
+						></span>
+
+					<span class='fa fa-tasks fa-2x editobject'
+						fn='admin/task/assegna/'
+						_object_id='{{t.id}}'
+						></span>
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>	
+
+{% endblock %}
+
+
+	

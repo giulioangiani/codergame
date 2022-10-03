@@ -1,0 +1,39 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<table id='table_gruppi' class='table'>
+		<thead>
+			<tr>
+				<th>Task</th>
+				<th>Utente</th>
+				<th>Data Ora</th>
+				<th>Punteggio</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for s in submissions|reverse %}
+			<tr class=" p-1 rounded
+					{% if s.punteggio == s.task().maxpoints %}
+						bg-oktest
+					{% elif s.punteggio == 0 %}
+						bg-kotest
+					{% else %}
+						bg-middletest
+					{% endif %}
+				"
+				>
+				<td>{{s.task().titolo}}</td>
+				<td>{{s.utente().cognome}} {{s.utente().nome}} [{{s.utente().gruppo.nomegruppo}}]</td>
+				<td>{{s.timestamp}}</td>
+				<td>{{s.punteggio}} / {{s.task().maxpoints}}</td>
+				<td></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>	
+
+{% endblock %}
+
+
+	

@@ -1,0 +1,20 @@
+# APP constant HERE
+LOGIN_APP_DESCRIPTION = "Codergame - IIS Pascal<br>Piattaforma di programmazione"
+MAIN_APP_TITLE = "Codergame - IIS Pascal"
+CUSTOM_USER_PERMISSION = False
+GOOGLE_SIGN_UP = False
+
+
+MAIN_DIR = "/media/HOMEDEV/WWW/wsgi/codergame/"
+MAIN_APP_DIR = MAIN_DIR + "appdir/"
+MAIN_LOG_DIR = MAIN_DIR + "log/"
+MAIN_DATA_DIR = MAIN_APP_DIR + "data/"
+MAIN_EXPORT_DIR = MAIN_DATA_DIR + "export/"
+MAIN_FILES_DIR = MAIN_APP_DIR
+PDFTMPDIR = MAIN_APP_DIR + "pdf/"
+SQLITEDB = MAIN_APP_DIR + "db/codergame.db"
+
+CODERGAME_MAIN_DIR = MAIN_DATA_DIR + "codergame/"
+CODERGAME_UPLOAD_DIR = CODERGAME_MAIN_DIR + "upload/"
+CODERGAME_QUIZ_DIR = CODERGAME_MAIN_DIR + "quiz/enabled/"
+CODERGAME_AVAILABLE_QUIZ_DIR = CODERGAME_MAIN_DIR + "quiz/availables/"

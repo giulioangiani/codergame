@@ -1,0 +1,40 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<table id='table_risultati' class='table table-striped'>
+		<thead><tr><td></td>{% for quiz in quizzes %}
+						<td>QUIZ {{ quiz.id }}</td>
+		
+					{% endfor %}
+			<td class='text-right'>TOTALE</td>
+		</tr>
+		</thead>
+		<tbody>
+		{% for r in totali %}
+		<tr>
+			<td>{{r}}</td>
+		
+		 {% for quiz in quizzes %}
+			<td class='text-right'>
+				{% if risultati[r][quiz.id] %}
+					{{ risultati[r][quiz.id]}} / {{ quiz.maxpoints }}
+				{% endif %}
+
+			</td>
+		 {% endfor %}
+		 
+			<td class='text-right'><b>{{ totali[r] }} / {{ massimo_punteggio }}</b></td>
+			<td class='text-right'><b>{{ "%.2f"|format(totali[r]*100 / massimo_punteggio) }} %</b></td>
+
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>	
+
+<script>
+	setTimeout("$('#classifica').click()", 10000);
+</script>
+{% endblock %}
+
+
+	

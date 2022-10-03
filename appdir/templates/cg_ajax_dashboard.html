@@ -1,0 +1,53 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<div>
+		
+		{% for task in U.gruppo.tasks %}
+			<div class='quiz-item quiz '>
+				
+				<!-- {% include "cg_quizbox.html" %} -->
+				<span class='dash_quiz_title'>{{ task.titolo }}</span>
+				<br>
+				<span class='dash_quiz_title'>Difficolta: {{ task.difficolta }} - Punteggio massimo {{ task.maxpoints}}</span>
+				<span class='dash_quiz_title'>- Numero di testcase: {{ task.testcases|count }}</span>
+				<a href='#' class="text-right nav-link ajaxlink" fn="codergame/form/{{task.id}}" 
+					id='codergame_form_{{task.id}}'>Vai alla scheda per la sottomissione >> </a>
+				<div>
+					<h6 class='text-success'>Punteggio massimo ottenibile per questo task : <b>{{task.maxpoints}}</h6>
+					<label>Sottoposizioni inviate</b></label>
+					{% for sp in U.submissions(task) %}
+						<div class='w-100 text-dark
+								{% if sp.punteggio == task.maxpoints %}
+									bg-oktest
+								{% elif sp.punteggio == 0 %}
+									bg-kotest
+								{% else %}
+									bg-middletest
+								{% endif %}
+								mb-2 rounded p-1'>
+							{{ sp.timestamp }}
+							<span class='rounded w-100'>PUNTEGGIO : {{ sp.punteggio }}</span>
+						</div>
+					{% endfor %}
+					
+					{% if not U.submissions(task) %}
+						<h6 style='font-size:0.8em' class='text-danger'>Nessuna sottoposizione inviata</h6>
+					{% endif %}
+					
+				</div>
+			</div>
+			
+			
+		
+		{% endfor %}
+		
+			<div class='quiz-item quiz panel-totale p-3'>
+				<span class='dash_quiz_totale'>PUNTEGGIO TOTALE</span><br>
+				<span class='span_punti text-success'>{{ punteggio_studente }}/{{ maxpunteggio }} 
+				- {{ '%0.2f'| format(punteggio_studente*100/maxpunteggio|float) }}%</span>
+			</div>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "empty.html" %}
+
+{% block custom_css %}<link rel="stylesheet" href="/static/css/app.css">{% endblock %}
+
+
+{% block title %}{{ MAIN_APP_TITLE }}{% endblock %}
+    
+
+    {% block menubar %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style='background-color:darkcyan'>
+      <a class="navbar-brand" href="#">{{ MAIN_APP_TITLE }} </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+		  {% if session["USEROBJ"]["role"] in ('GUEST') %}
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="codergame" id='dashboard'>Home</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="codergame" id='codergame'>CoderGame</a>
+          </li>
+          {% endif %}
+
+		  {% if session["USEROBJ"]["role"] in ('ADMIN') %}
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/home" id='admhome'>Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/students" id='students'>Studenti</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/groups" id='groups'>Gruppi</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/tasks" id='tasks'>Tasks</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/submissions" id='tasks'>Sottoposizioni</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="admin/results" id='results'>Vedi risultati</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link ajaxlink" fn="codergame/results" id='classifica'>Classifica CoderGame</a>
+          </li>
+
+          {% endif %}
+
+
+        </ul>
+        <form class="text-warning form-inline mt-2 mt-md-0">
+			<span class='text-white p-2'>Ciao, </span> {{ session["USEROBJ"]["description"] }}
+
+            <a class="nav-link text-info" id='link_logout' href="#">Logout</a>
+        </form>
+      </div>
+    </nav>
+
+    <div class="wrapper d-flex align-items-stretch">
+
+	</div>
+
+ 
+ 
+    {% endblock %}

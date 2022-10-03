@@ -1,0 +1,130 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<div class='p-3'>
+		
+		<style>
+			#options {display:none;
+							float: left;
+							position: fixed;
+							z-index: 2000;
+							width: 700px;
+							background-color: #FFF1C2;
+							display: block;
+							position: absolute;
+							overflow-y: auto;
+							max-height: 300px;
+							border: 2px solid #bbb;
+							border-radius: 0px 0px 5px 5px;
+					}
+			#options .option_item {
+				padding: 3px;
+				border-bottom: 1px solid #bbb;
+    		}
+			
+			#options .option_item:hover {
+				background-color: #FFDC68;
+			}
+		
+			#calcolacf {
+				float: right;
+				padding: 8px 5px;
+				text-decoration: underline;
+			}
+		</style>
+		
+		
+		
+		
+		<form id='scheda_task'>
+			<div class="row mx-n2">
+			  <div class="form-group col-5 pl-2">
+				<label for="exampleInputEmail1">Titolo</label>
+				<input type="text" disabled class="form-control text-left" id="titolo"  value="{{task.titolo}}">
+			  </div>
+			  <div class="form-group col-5 px-2">
+				<label for="">Sottotitolo</label>
+				<input type="text" disabled class="form-control text-left" id="sottotitolo" value="{{task.sottotitolo}}">
+			  </div>
+			  <div class="form-group col-2 px-2">
+				<label for="">Difficolta</label>
+				<input type="text" disabled class="form-control text-right" style='max-width:100px' id="difficolta" value="{{task.difficolta}}">
+			  </div>
+			</div>
+			<div class="row mx-n2">
+				<div class="form-group col-12 px-2">
+					<h5>Gruppi abilitati a questo task</h5>
+					<table><tbody>
+					{% for g in gruppi %}
+						<tr>
+							<td class='p-3' width="50px">
+								<input type="checkbox" class="form-control text-left gruppo" 
+										style='width:40px' id="task_{{task.id}}_gruppo_{{g.id}}" value="{{g.id}}" disabled
+										{% if task in g.tasks %}
+											CHECKED
+										{% endif %}
+								>
+
+							</td>
+							<td class='p-3'>
+								{{ g.nomegruppo }}
+							</td>
+							<td class='p-3'>
+								{{ g.descgruppo }}
+							</td>
+							<td class='p-3' style="width:auto">
+									<button type="button" id='btn-disabilita_{{task.id}}_{{g.id}}' 
+										task_id={{task.id}} 
+										gruppo_id = {{g.id}}
+										fn="/admin/task/disabilita"
+										mode="disabilita"
+										class="btn btn-warning pr-3 btn-abilita-disabilita
+										
+										{% if task not in g.tasks %}
+											d-none
+										{% endif %}
+										
+										">Disabilita</button>
+
+									<button type="button" id='btn-abilita_{{task.id}}_{{g.id}}' 
+										task_id={{task.id}} 
+										gruppo_id = {{g.id}}
+										fn="/admin/task/abilita"
+										mode="abilita"
+										class="btn btn-success pr-3  btn-abilita-disabilita
+									
+										{% if task in g.tasks %}
+											d-none
+										{% endif %}
+
+									
+									
+										">Abilita</button>
+								
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody></table>
+				</div>
+			</div>
+
+			<div id='bottom-panel'>
+			{% if USER.role in ('ADMIN') %}
+
+			  <button type="button" id='btn-modify' 
+				
+				class="btn btn-success mt-3 ">Modifica</button>
+				  
+			{% endif %}
+				  
+				<button type="button" id='btn-close' class="btn btn-info mt-3 float-right">Chiudi</button>
+			</div>
+			<div id='bottom-msg' class='text-primary'></div>
+		
+		</form>
+		
+	
+	</div>
+
+
+{% endblock %}

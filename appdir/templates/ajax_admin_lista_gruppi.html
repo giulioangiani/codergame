@@ -1,0 +1,30 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<table id='table_gruppi' class='table table-striped'>
+		<thead>
+			<tr>
+				<th>Codice</th>
+				<th>Descrizione</th>
+				<th>Studenti</th>
+				<th>Tasks</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for g in gruppi %}
+			<tr>
+				<td>{{g.nomegruppo}}</td>
+				<td>{{g.descgruppo}}</td>
+				<td>{{g.studenti|count}}</td>
+				<td>
+					{% for t in g.tasks %}{{t.titolo}} [D. {{t.difficolta}}]<br>{% endfor %}
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>	
+
+{% endblock %}
+
+
+	

@@ -1,0 +1,923 @@
+[Mon Oct 03 12:28:05.686580 2022] [wsgi:error] [pid 567200] [client ::1:38316] [2022-10-03 12:28:05,672] ERROR in app: Exception on /admin/students [GET], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686645 2022] [wsgi:error] [pid 567200] [client ::1:38316] Traceback (most recent call last):, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686654 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 322, in _resolve_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686661 2022] [wsgi:error] [pid 567200] [client ::1:38316]     rval = d[token], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686666 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/_collections.py", line 729, in __missing__, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686672 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self[key] = val = self.creator(key), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686678 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 301, in _access_cls, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686685 2022] [wsgi:error] [pid 567200] [client ::1:38316]     return self.fallback[key], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686692 2022] [wsgi:error] [pid 567200] [client ::1:38316] KeyError: 'Task', referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686700 2022] [wsgi:error] [pid 567200] [client ::1:38316] , referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686708 2022] [wsgi:error] [pid 567200] [client ::1:38316] The above exception was the direct cause of the following exception:, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686715 2022] [wsgi:error] [pid 567200] [client ::1:38316] , referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686722 2022] [wsgi:error] [pid 567200] [client ::1:38316] Traceback (most recent call last):, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686729 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2447, in wsgi_app, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686737 2022] [wsgi:error] [pid 567200] [client ::1:38316]     response = self.full_dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686745 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1952, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686754 2022] [wsgi:error] [pid 567200] [client ::1:38316]     rv = self.handle_user_exception(e), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686762 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1821, in handle_user_exception, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686770 2022] [wsgi:error] [pid 567200] [client ::1:38316]     reraise(exc_type, exc_value, tb), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686776 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/_compat.py", line 39, in reraise, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686781 2022] [wsgi:error] [pid 567200] [client ::1:38316]     raise value, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686787 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1950, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686793 2022] [wsgi:error] [pid 567200] [client ::1:38316]     rv = self.dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686798 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1936, in dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686820 2022] [wsgi:error] [pid 567200] [client ::1:38316]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686827 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 36, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686833 2022] [wsgi:error] [pid 567200] [client ::1:38316]     return fnz(*args, **kwargs), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686838 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 247, in admin_studenti, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686844 2022] [wsgi:error] [pid 567200] [client ::1:38316]     (status, html) = admin.students(session), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686850 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 21, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686856 2022] [wsgi:error] [pid 567200] [client ::1:38316]     return fnz(*args, **kwargs, USER=USER), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686861 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/admin.py", line 32, in students, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686867 2022] [wsgi:error] [pid 567200] [client ::1:38316]     studenti = dbsession.query(Utente).order_by(Utente.cognome.asc()).filter_by(role='GUEST').all(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686873 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1589, in query, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686879 2022] [wsgi:error] [pid 567200] [client ::1:38316]     return self._query_cls(entities, self, **kwargs), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686885 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 197, in __init__, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686891 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self._set_entities(entities), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686896 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 225, in _set_entities, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686902 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self._set_entity_selectables(self._entities), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686908 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 256, in _set_entity_selectables, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686914 2022] [wsgi:error] [pid 567200] [client ::1:38316]     ent.setup_entity(*d[entity]), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686919 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 4324, in setup_entity, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686925 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self._with_polymorphic = ext_info.with_polymorphic_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686931 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686937 2022] [wsgi:error] [pid 567200] [client ::1:38316]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686942 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 2155, in _with_polymorphic_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686953 2022] [wsgi:error] [pid 567200] [client ::1:38316]     configure_mappers(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686959 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 3299, in configure_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686965 2022] [wsgi:error] [pid 567200] [client ::1:38316]     mapper._post_configure_properties(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686971 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 1965, in _post_configure_properties, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686977 2022] [wsgi:error] [pid 567200] [client ::1:38316]     prop.init(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686982 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/interfaces.py", line 197, in init, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686988 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self.do_init(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686993 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2077, in do_init, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.686999 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self._process_dependent_arguments(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687005 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2148, in _process_dependent_arguments, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687011 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self.target = self.entity.persist_selectable, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687017 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687023 2022] [wsgi:error] [pid 567200] [client ::1:38316]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687029 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2044, in entity, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687035 2022] [wsgi:error] [pid 567200] [client ::1:38316]     argument = self.argument(), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687040 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 326, in _resolve_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687046 2022] [wsgi:error] [pid 567200] [client ::1:38316]     self._raise_for_name(name, err), referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687052 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 304, in _raise_for_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687058 2022] [wsgi:error] [pid 567200] [client ::1:38316]     util.raise_(, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687063 2022] [wsgi:error] [pid 567200] [client ::1:38316]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/compat.py", line 182, in raise_, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687069 2022] [wsgi:error] [pid 567200] [client ::1:38316]     raise exception, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:05.687075 2022] [wsgi:error] [pid 567200] [client ::1:38316] sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Categoria->categorie, expression 'Task' failed to locate a name ('Task'). If this is a class name, consider adding this relationship() to the <class 'models.Categoria'> class after both dependent classes have been defined., referer: http://localhost:10000/?
+[Mon Oct 03 12:28:06.924425 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa5183f10>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.493241 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.495046 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.496147 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.496651 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.497837 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.498246 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.499225 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.499246 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.500060 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.500081 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.500871 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.500890 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.501748 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.501769 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.502550 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.502569 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.503394 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.503415 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.505438 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.505471 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.506478 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.506502 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.507362 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.507388 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.508677 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.508708 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.509688 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.509712 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.510769 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.510801 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.511830 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.511852 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.512677 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.512697 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.513509 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.513529 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.514395 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.514415 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.515203 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.515223 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.516137 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.516156 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.517326 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.517386 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.518841 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.518873 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.519792 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.519813 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.520678 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.520698 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.521521 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.521543 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.522352 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.522371 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.523216 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.523235 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.524018 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.524037 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.524822 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.524841 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.525699 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.525727 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.526542 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.526581 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.527995 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.528031 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.529065 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.529088 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.530078 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.530112 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.531206 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.531239 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.532195 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.532216 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.533107 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.533128 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.533962 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.533982 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.534872 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.534894 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.535705 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.535725 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.536522 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.536541 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.537400 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.537421 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.538217 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.538236 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.539028 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.539047 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.539902 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.539921 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.540726 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.540745 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.541554 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.541574 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.543412 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.543436 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.545594 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.545626 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.546497 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.546518 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.547413 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.547435 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.548232 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.548253 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.549068 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.549098 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.550055 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.550077 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.550863 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.550883 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.551697 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.551716 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.552566 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.552586 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.553400 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.553422 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.554236 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.554255 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.555077 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.555095 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.555906 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.555929 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.556693 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.556712 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.557611 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.557631 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.558416 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.558445 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.559247 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.559267 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.560780 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.560894 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.562144 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.562179 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.563172 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.563202 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.565177 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.565210 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.566087 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.566109 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.566924 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.566943 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.567763 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.567783 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.568577 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.568596 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.569738 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.569769 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.572657 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.573061 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4d8ea60>, <models.TestCase object at 0x7f0aa4d8e0a0>, <models.TestCase object at 0x7f0aa4df9940>, <models.TestCase object at 0x7f0aa4df9f70>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.573966 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.573987 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.574798 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.574818 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.575606 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.575625 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.576491 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.576534 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.577435 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.577472 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.578870 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.578902 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.580177 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.580214 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df9c70>, <models.TestCase object at 0x7f0aa4df9d00>, <models.TestCase object at 0x7f0aa4df9d60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.581459 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.581494 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4df97f0>, <models.TestCase object at 0x7f0aa4e020a0>, <models.TestCase object at 0x7f0aa4e02100>, <models.TestCase object at 0x7f0aa4e02190>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.582501 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.582524 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4e02340>, <models.TestCase object at 0x7f0aa4e023d0>, <models.TestCase object at 0x7f0aa4e02430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:07.588417 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4f0a400>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.342615 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.343986 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.344953 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.345355 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.346217 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.346589 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.347451 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.347471 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.348269 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.348289 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.349082 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.349101 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.349958 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.349979 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.350778 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.350798 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.351586 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.351605 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.353495 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.353524 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.354435 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.354460 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.355303 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.355339 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.356372 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.356400 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.357278 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.357305 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.358763 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.358822 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.359976 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.360004 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.360991 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.361025 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.362168 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.362207 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.363212 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.363233 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.364037 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.364057 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.364871 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.364890 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.365763 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.365784 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.366717 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.366751 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.367541 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.367560 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.368403 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.368422 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.369258 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.369279 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.370063 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.370082 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.370934 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.370955 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.371754 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.371774 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.372569 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.372589 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.373560 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.373584 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.374659 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.374694 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.375695 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.375721 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.376695 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.376716 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.377545 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.377567 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.378368 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.378387 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.379222 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.379241 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.380024 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.380043 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.380857 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.380877 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.381816 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.381841 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.382673 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.382693 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.383498 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.383517 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.384358 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.384377 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.385188 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.385209 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.386063 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.386083 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.386930 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.386950 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.387800 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.387821 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.388645 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.388664 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.390541 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.390580 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.393213 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.393245 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.394294 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.394336 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.395534 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.395570 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.396510 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.396532 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.397377 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.397398 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.398288 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.398309 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.399134 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.399155 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.399964 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.399983 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.400811 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.400831 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.401654 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.401675 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.402466 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.402485 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.403332 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.403352 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.404167 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.404187 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.404986 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.405006 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.405931 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.405953 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.406756 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.406777 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.407835 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.407879 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.409047 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.409074 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.409969 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.409992 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.410810 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.410829 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.412282 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.412304 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.413102 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.413122 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.413949 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.413970 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.416002 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.416035 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.417032 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.417054 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.418011 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.418036 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.421273 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.421776 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c28490>, <models.TestCase object at 0x7f0aa4c28760>, <models.TestCase object at 0x7f0aa4c28bb0>, <models.TestCase object at 0x7f0aa4c281c0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.422853 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.422896 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.423947 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.423993 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.425270 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.425314 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.426775 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.426831 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.428114 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.428149 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.429085 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.429111 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.430139 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.430168 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c183d0>, <models.TestCase object at 0x7f0aa4c18d30>, <models.TestCase object at 0x7f0aa4c18d90>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.431125 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.431167 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c182e0>, <models.TestCase object at 0x7f0aa4c18940>, <models.TestCase object at 0x7f0aa4c230a0>, <models.TestCase object at 0x7f0aa4c23100>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.432588 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.432623 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4c232e0>, <models.TestCase object at 0x7f0aa4c23370>, <models.TestCase object at 0x7f0aa4c233d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:08.433456 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4d92fa0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.197754 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.197796 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4a975b0>, <models.TestCase object at 0x7f0aa4a97760>, <models.TestCase object at 0x7f0aa4a97850>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.200547 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.200577 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4a9f820>, <models.TestCase object at 0x7f0aa4a9f880>, <models.TestCase object at 0x7f0aa4a9f9d0>, <models.TestCase object at 0x7f0aa4a9fa30>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.201276 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.201296 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4a9fb80>, <models.TestCase object at 0x7f0aa4a9fc10>, <models.TestCase object at 0x7f0aa4a9fc40>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.202173 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.202194 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4a9fe80>, <models.TestCase object at 0x7f0aa4a9f0a0>, <models.TestCase object at 0x7f0aa4a9f100>, <models.TestCase object at 0x7f0aa4a9ff40>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.202838 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4c0b280>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.825642 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.825689 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa491d130>, <models.TestCase object at 0x7f0aa491d1c0>, <models.TestCase object at 0x7f0aa491d220>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.829036 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.829075 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa492a0d0>, <models.TestCase object at 0x7f0aa492a130>, <models.TestCase object at 0x7f0aa492a280>, <models.TestCase object at 0x7f0aa492a2e0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.830070 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.830163 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa492a430>, <models.TestCase object at 0x7f0aa492a4c0>, <models.TestCase object at 0x7f0aa492a4f0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.831815 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.831848 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa492a670>, <models.TestCase object at 0x7f0aa492a700>, <models.TestCase object at 0x7f0aa492a730>, <models.TestCase object at 0x7f0aa492a7f0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:09.832573 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4a605b0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.377488 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.379080 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47ae610>, <models.TestCase object at 0x7f0aa47ae6a0>, <models.TestCase object at 0x7f0aa47ae640>, <models.TestCase object at 0x7f0aa47ae880>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.386205 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.386737 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47bd6a0>, <models.TestCase object at 0x7f0aa47bdca0>, <models.TestCase object at 0x7f0aa47bdfa0>, <models.TestCase object at 0x7f0aa474a0a0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.387506 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.387875 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47bd220>, <models.TestCase object at 0x7f0aa47bd310>, <models.TestCase object at 0x7f0aa47bdca0>, <models.TestCase object at 0x7f0aa47bdcd0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.393111 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.393566 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474d160>, <models.TestCase object at 0x7f0aa474d1f0>, <models.TestCase object at 0x7f0aa474d250>, <models.TestCase object at 0x7f0aa474d2e0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.394298 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.394654 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474d160>, <models.TestCase object at 0x7f0aa474d1f0>, <models.TestCase object at 0x7f0aa474d250>, <models.TestCase object at 0x7f0aa474d2e0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.400291 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.400673 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474c190>, <models.TestCase object at 0x7f0aa474c220>, <models.TestCase object at 0x7f0aa474c280>, <models.TestCase object at 0x7f0aa474c310>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.401377 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.401831 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474c190>, <models.TestCase object at 0x7f0aa474c220>, <models.TestCase object at 0x7f0aa474c280>, <models.TestCase object at 0x7f0aa474c310>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.407549 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.407996 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474d1c0>, <models.TestCase object at 0x7f0aa474d250>, <models.TestCase object at 0x7f0aa474d2b0>, <models.TestCase object at 0x7f0aa474d340>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.408712 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.409075 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474d1c0>, <models.TestCase object at 0x7f0aa474d250>, <models.TestCase object at 0x7f0aa474d2b0>, <models.TestCase object at 0x7f0aa474d340>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.413233 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.413602 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474d1f0>, <models.TestCase object at 0x7f0aa474d280>, <models.TestCase object at 0x7f0aa474d2e0>, <models.TestCase object at 0x7f0aa474d370>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.414276 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.414634 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47501f0>, <models.TestCase object at 0x7f0aa4750280>, <models.TestCase object at 0x7f0aa47502e0>, <models.TestCase object at 0x7f0aa4750370>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.419915 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.420344 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa474f220>, <models.TestCase object at 0x7f0aa474f2b0>, <models.TestCase object at 0x7f0aa474f310>, <models.TestCase object at 0x7f0aa474f3a0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.421079 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.421490 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4750220>, <models.TestCase object at 0x7f0aa47502b0>, <models.TestCase object at 0x7f0aa4750310>, <models.TestCase object at 0x7f0aa47503a0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.426190 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.426594 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4751250>, <models.TestCase object at 0x7f0aa47512e0>, <models.TestCase object at 0x7f0aa4751340>, <models.TestCase object at 0x7f0aa47513d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.427283 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.427634 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4751250>, <models.TestCase object at 0x7f0aa47512e0>, <models.TestCase object at 0x7f0aa4751340>, <models.TestCase object at 0x7f0aa47513d0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.432059 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.432480 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4751280>, <models.TestCase object at 0x7f0aa4751310>, <models.TestCase object at 0x7f0aa4751370>, <models.TestCase object at 0x7f0aa4751400>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.433196 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.433551 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4751280>, <models.TestCase object at 0x7f0aa4751310>, <models.TestCase object at 0x7f0aa4751370>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.439421 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.439852 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47512b0>, <models.TestCase object at 0x7f0aa4751340>, <models.TestCase object at 0x7f0aa47513a0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.440611 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.440969 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47512b0>, <models.TestCase object at 0x7f0aa4751340>, <models.TestCase object at 0x7f0aa47513a0>, <models.TestCase object at 0x7f0aa4751430>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.445630 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.446055 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4751310>, <models.TestCase object at 0x7f0aa47513a0>, <models.TestCase object at 0x7f0aa4751400>, <models.TestCase object at 0x7f0aa4751490>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.446745 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.447281 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47502e0>, <models.TestCase object at 0x7f0aa4750370>, <models.TestCase object at 0x7f0aa47503d0>, <models.TestCase object at 0x7f0aa4750460>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.452005 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.452616 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4752370>, <models.TestCase object at 0x7f0aa4752400>, <models.TestCase object at 0x7f0aa4752040>, <models.TestCase object at 0x7f0aa47524c0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.453406 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.453777 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4752310>, <models.TestCase object at 0x7f0aa47523a0>, <models.TestCase object at 0x7f0aa4752400>, <models.TestCase object at 0x7f0aa4752490>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.458363 2022] [wsgi:error] [pid 567202] [client ::1:38318] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.458787 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47523d0>, <models.TestCase object at 0x7f0aa4752460>, <models.TestCase object at 0x7f0aa4752040>, <models.TestCase object at 0x7f0aa47524f0>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.459717 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.460201 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4750370>, <models.TestCase object at 0x7f0aa4750400>, <models.TestCase object at 0x7f0aa4750040>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.464943 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.465377 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47503d0>, <models.TestCase object at 0x7f0aa4750460>, <models.TestCase object at 0x7f0aa4750040>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.466033 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.466385 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa47503d0>, <models.TestCase object at 0x7f0aa4750460>, <models.TestCase object at 0x7f0aa4750040>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.472689 2022] [wsgi:error] [pid 567202] [client ::1:38318] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.473084 2022] [wsgi:error] [pid 567202] [client ::1:38318] [<models.TestCase object at 0x7f0aa4750430>, <models.TestCase object at 0x7f0aa47500a0>, <models.TestCase object at 0x7f0aa4750040>], referer: http://localhost:10000/?
+[Mon Oct 03 12:28:10.473223 2022] [wsgi:error] [pid 567202] [client ::1:38318] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa48ded60>, referer: http://localhost:10000/?
+[Mon Oct 03 12:28:12.870309 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.871672 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.884521 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.884555 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.884578 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.884588 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.885939 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.885967 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886005 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886017 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886041 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886062 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886085 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886096 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886116 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886126 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886147 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886158 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886178 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886189 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886209 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.886219 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4f27c40>, <models.TestCase object at 0x7f0aa4f27cd0>, <models.TestCase object at 0x7f0aa4f27d30>, <models.TestCase object at 0x7f0aa4f27d60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:12.887388 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa5086a30>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.439960 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.441618 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.441971 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.442000 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.442041 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.442060 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443675 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443711 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443801 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443814 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443838 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443849 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443871 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443881 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443902 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443912 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443934 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443948 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443970 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.443981 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.444005 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.444016 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4d80340>, <models.TestCase object at 0x7f0aa4d803d0>, <models.TestCase object at 0x7f0aa4d80430>, <models.TestCase object at 0x7f0aa4d80490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.445485 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4e167f0>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.966112 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.967476 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.967695 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.967712 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.967732 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.967753 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968853 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968874 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968908 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968920 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968943 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968954 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968975 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.968985 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969005 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969015 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969036 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969046 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969067 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969078 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969098 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.969108 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa4b10a00>, <models.TestCase object at 0x7f0aa4b10a90>, <models.TestCase object at 0x7f0aa4b10af0>, <models.TestCase object at 0x7f0aa4b10b50>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:13.970259 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4cb8970>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.114522 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.116036 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.116266 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.116284 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.116304 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.116315 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117525 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117550 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117586 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117597 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117621 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117631 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117653 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117663 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117684 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117694 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117715 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117725 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117746 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117756 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117777 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.117787 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa492f1f0>, <models.TestCase object at 0x7f0aa492f280>, <models.TestCase object at 0x7f0aa492f2e0>, <models.TestCase object at 0x7f0aa492f340>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.118954 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4a4af40>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.330386 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.331760 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.331972 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.331988 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.332008 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.332018 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333099 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333120 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333191 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333205 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333229 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333239 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333261 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333271 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333291 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333301 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333322 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333332 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333363 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333374 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333394 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.333405 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa46c6910>, <models.TestCase object at 0x7f0aa46c69a0>, <models.TestCase object at 0x7f0aa46c6a00>, <models.TestCase object at 0x7f0aa46c6a60>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:14.334528 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4869820>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.428853 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.430105 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.430330 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.430347 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.430367 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.430377 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431490 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431512 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431546 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431557 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431604 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431625 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431652 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431663 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431683 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431693 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431725 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431736 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431757 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431767 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431787 2022] [wsgi:error] [pid 567199] [client ::1:38320] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.431797 2022] [wsgi:error] [pid 567199] [client ::1:38320] [<models.TestCase object at 0x7f0aa452f400>, <models.TestCase object at 0x7f0aa452f490>, <models.TestCase object at 0x7f0aa452f4f0>, <models.TestCase object at 0x7f0aa452f550>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:16.433095 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa467ffd0>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:17.957935 2022] [wsgi:error] [pid 567199] [client ::1:38320] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4464970>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:23.618295 2022] [wsgi:error] [pid 567201] [client ::1:38454] taskid= 4, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:23.621778 2022] [wsgi:error] [pid 567201] [client ::1:38454] Compilazione, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.100450 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('returncode=', 0), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104191 2022] [wsgi:error] [pid 567201] [client ::1:38454] testcases= [<models.TestCase object at 0x7f0aa4f232e0>, <models.TestCase object at 0x7f0aa4f23370>, <models.TestCase object at 0x7f0aa4f233d0>, <models.TestCase object at 0x7f0aa4f23400>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104340 2022] [wsgi:error] [pid 567201] [client ::1:38454] fname =  /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104361 2022] [wsgi:error] [pid 567201] [client ::1:38454] input =  3, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104366 2022] [wsgi:error] [pid 567201] [client ::1:38454] 1, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104370 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104373 2022] [wsgi:error] [pid 567201] [client ::1:38454] 3, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104378 2022] [wsgi:error] [pid 567201] [client ::1:38454] , referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104391 2022] [wsgi:error] [pid 567201] [client ::1:38454] atteso =  1 2 3, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.104421 2022] [wsgi:error] [pid 567201] [client ::1:38454] finput_tmp= /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1044018.input, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.112645 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('test_input_output', CompletedProcess(args='timeout 1s /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp.o < /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1044018.input > /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1045911.output', returncode=0)), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.112946 2022] [wsgi:error] [pid 567201] [client ::1:38454] test 11 :  {'input': '3\\n1\\n2\\n3', 'output': '1 2 3', 'atteso': '1 2 3', 'punteggio': 1, 'puntmax': 1, 'corretto': True}, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113086 2022] [wsgi:error] [pid 567201] [client ::1:38454] fname =  /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113101 2022] [wsgi:error] [pid 567201] [client ::1:38454] input =  5, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113105 2022] [wsgi:error] [pid 567201] [client ::1:38454] 1, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113108 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113111 2022] [wsgi:error] [pid 567201] [client ::1:38454] 3, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113114 2022] [wsgi:error] [pid 567201] [client ::1:38454] 4, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113117 2022] [wsgi:error] [pid 567201] [client ::1:38454] 5, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113122 2022] [wsgi:error] [pid 567201] [client ::1:38454] , referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113192 2022] [wsgi:error] [pid 567201] [client ::1:38454] atteso =  1 2 4 3 5, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.113223 2022] [wsgi:error] [pid 567201] [client ::1:38454] finput_tmp= /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.113206.input, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120081 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('test_input_output', CompletedProcess(args='timeout 1s /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp.o < /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.113206.input > /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1133182.output', returncode=0)), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120344 2022] [wsgi:error] [pid 567201] [client ::1:38454] test 12 :  {'input': '5\\n1\\n2\\n3\\n4\\n5', 'output': '1 2 4 3 5', 'atteso': '1 2 4 3 5', 'punteggio': 1, 'puntmax': 1, 'corretto': True}, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120463 2022] [wsgi:error] [pid 567201] [client ::1:38454] fname =  /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120480 2022] [wsgi:error] [pid 567201] [client ::1:38454] input =  0, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120490 2022] [wsgi:error] [pid 567201] [client ::1:38454] atteso =   , referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.120515 2022] [wsgi:error] [pid 567201] [client ::1:38454] finput_tmp= /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1204994.input, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.127870 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('test_input_output', CompletedProcess(args='timeout 1s /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp.o < /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1204994.input > /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1206079.output', returncode=0)), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128118 2022] [wsgi:error] [pid 567201] [client ::1:38454] test 13 :  {'input': '0', 'output': '', 'atteso': ' ', 'punteggio': 1, 'puntmax': 1, 'corretto': True}, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128239 2022] [wsgi:error] [pid 567201] [client ::1:38454] fname =  /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128253 2022] [wsgi:error] [pid 567201] [client ::1:38454] input =  7, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128257 2022] [wsgi:error] [pid 567201] [client ::1:38454] 8, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128260 2022] [wsgi:error] [pid 567201] [client ::1:38454] 5, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128263 2022] [wsgi:error] [pid 567201] [client ::1:38454] 3, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128266 2022] [wsgi:error] [pid 567201] [client ::1:38454] 1, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128268 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128271 2022] [wsgi:error] [pid 567201] [client ::1:38454] 4, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128274 2022] [wsgi:error] [pid 567201] [client ::1:38454] 6, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128279 2022] [wsgi:error] [pid 567201] [client ::1:38454] , referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128289 2022] [wsgi:error] [pid 567201] [client ::1:38454] atteso =  8 5 1 4 3 2 6, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.128314 2022] [wsgi:error] [pid 567201] [client ::1:38454] finput_tmp= /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1282988.input, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.135224 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('test_input_output', CompletedProcess(args='timeout 1s /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/20221003_122823.cpp.o < /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.1282988.input > /media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/4/tmp//1664792905.128428.output', returncode=0)), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.135571 2022] [wsgi:error] [pid 567201] [client ::1:38454] test 14 :  {'input': '7\\n8\\n5\\n3\\n1\\n2\\n4\\n6', 'output': '8 5 1 4 3 2 6', 'atteso': '8 5 1 4 3 2 6', 'punteggio': 2, 'puntmax': 2, 'corretto': True}, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.135607 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('puntmax=', 5), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.135624 2022] [wsgi:error] [pid 567201] [client ::1:38454] ('punteggio=', 5), referer: http://localhost:10000/home
+[Mon Oct 03 12:28:25.244982 2022] [wsgi:error] [pid 567201] [client ::1:38454] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa5086a30>, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.116633 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.118239 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.127162 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.127200 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.127223 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.127234 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128535 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128558 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128598 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128610 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128633 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128644 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128666 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128677 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128698 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128708 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128729 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128739 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128760 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128770 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128791 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128802 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128823 2022] [wsgi:error] [pid 567201] [client ::1:38454] 2, referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.128834 2022] [wsgi:error] [pid 567201] [client ::1:38454] [<models.TestCase object at 0x7f0aa4d05340>, <models.TestCase object at 0x7f0aa4d053d0>, <models.TestCase object at 0x7f0aa4d05430>, <models.TestCase object at 0x7f0aa4d05490>], referer: http://localhost:10000/home
+[Mon Oct 03 12:28:27.129995 2022] [wsgi:error] [pid 567201] [client ::1:38454] closing  <sqlalchemy.engine.base.Connection object at 0x7f0aa4e23190>, referer: http://localhost:10000/home
+[Mon Oct 03 12:29:39.639796 2022] [wsgi:error] [pid 567203] [client ::1:60764] [2022-10-03 12:29:39,638] ERROR in app: Exception on /codergame/results [GET], referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639836 2022] [wsgi:error] [pid 567203] [client ::1:60764] Traceback (most recent call last):, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639840 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2447, in wsgi_app, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639843 2022] [wsgi:error] [pid 567203] [client ::1:60764]     response = self.full_dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639846 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1952, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639849 2022] [wsgi:error] [pid 567203] [client ::1:60764]     rv = self.handle_user_exception(e), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639852 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1821, in handle_user_exception, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639854 2022] [wsgi:error] [pid 567203] [client ::1:60764]     reraise(exc_type, exc_value, tb), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639857 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/_compat.py", line 39, in reraise, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639860 2022] [wsgi:error] [pid 567203] [client ::1:60764]     raise value, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639863 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1950, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639866 2022] [wsgi:error] [pid 567203] [client ::1:60764]     rv = self.dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639868 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1936, in dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639871 2022] [wsgi:error] [pid 567203] [client ::1:60764]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639874 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 36, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639877 2022] [wsgi:error] [pid 567203] [client ::1:60764]     return fnz(*args, **kwargs), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639879 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 230, in codergame_results, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639882 2022] [wsgi:error] [pid 567203] [client ::1:60764]     (status, html) = codergame.results(session), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639885 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 21, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639888 2022] [wsgi:error] [pid 567203] [client ::1:60764]     return fnz(*args, **kwargs, USER=USER), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639890 2022] [wsgi:error] [pid 567203] [client ::1:60764]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/codergame.py", line 225, in results, referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639893 2022] [wsgi:error] [pid 567203] [client ::1:60764]     risultati[f] = eval(open(user_result_file, 'r').read()), referer: http://localhost:10000/?
+[Mon Oct 03 12:29:39.639896 2022] [wsgi:error] [pid 567203] [client ::1:60764] FileNotFoundError: [Errno 2] No such file or directory: '/media/HOMEDEV/WWW/wsgi/codergame/appdir/data/codergame/upload/giada.trinchieri/result.dict', referer: http://localhost:10000/?
+[Mon Oct 03 12:43:47.313552 2022] [wsgi:error] [pid 568035] [client ::1:34956] Traceback (most recent call last):, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313620 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 322, in _resolve_name, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313630 2022] [wsgi:error] [pid 568035] [client ::1:34956]     rval = d[token], referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313634 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/_collections.py", line 729, in __missing__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313638 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self[key] = val = self.creator(key), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313642 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 301, in _access_cls, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313647 2022] [wsgi:error] [pid 568035] [client ::1:34956]     return self.fallback[key], referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313654 2022] [wsgi:error] [pid 568035] [client ::1:34956] KeyError: 'Task', referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313659 2022] [wsgi:error] [pid 568035] [client ::1:34956] , referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313665 2022] [wsgi:error] [pid 568035] [client ::1:34956] The above exception was the direct cause of the following exception:, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313670 2022] [wsgi:error] [pid 568035] [client ::1:34956] , referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313674 2022] [wsgi:error] [pid 568035] [client ::1:34956] Traceback (most recent call last):, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313678 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 74, in getUser, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313682 2022] [wsgi:error] [pid 568035] [client ::1:34956]     U = models.dbsession.query(models.Utente).filter_by(username=USER["username"]).one(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313687 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1589, in query, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313691 2022] [wsgi:error] [pid 568035] [client ::1:34956]     return self._query_cls(entities, self, **kwargs), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313695 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 197, in __init__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313699 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entities(entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313703 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 225, in _set_entities, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313707 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entity_selectables(self._entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313712 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 256, in _set_entity_selectables, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313716 2022] [wsgi:error] [pid 568035] [client ::1:34956]     ent.setup_entity(*d[entity]), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313720 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 4324, in setup_entity, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313729 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._with_polymorphic = ext_info.with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313733 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313737 2022] [wsgi:error] [pid 568035] [client ::1:34956]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313740 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 2155, in _with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313745 2022] [wsgi:error] [pid 568035] [client ::1:34956]     configure_mappers(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313750 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 3299, in configure_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313754 2022] [wsgi:error] [pid 568035] [client ::1:34956]     mapper._post_configure_properties(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313758 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 1965, in _post_configure_properties, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313762 2022] [wsgi:error] [pid 568035] [client ::1:34956]     prop.init(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313765 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/interfaces.py", line 197, in init, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313769 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self.do_init(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313773 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2077, in do_init, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313777 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._process_dependent_arguments(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313781 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2148, in _process_dependent_arguments, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313785 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self.target = self.entity.persist_selectable, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313789 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313793 2022] [wsgi:error] [pid 568035] [client ::1:34956]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313797 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2044, in entity, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313802 2022] [wsgi:error] [pid 568035] [client ::1:34956]     argument = self.argument(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313806 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 326, in _resolve_name, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313810 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._raise_for_name(name, err), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313814 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 304, in _raise_for_name, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313822 2022] [wsgi:error] [pid 568035] [client ::1:34956]     util.raise_(, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313825 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/compat.py", line 182, in raise_, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313829 2022] [wsgi:error] [pid 568035] [client ::1:34956]     raise exception, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313834 2022] [wsgi:error] [pid 568035] [client ::1:34956] sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Categoria->categorie, expression 'Task' failed to locate a name ('Task'). If this is a class name, consider adding this relationship() to the <class 'models.Categoria'> class after both dependent classes have been defined., referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313852 2022] [wsgi:error] [pid 568035] [client ::1:34956] , referer: http://localhost:10000/home
+[Mon Oct 03 12:43:47.313897 2022] [wsgi:error] [pid 568035] [client ::1:34956] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83b21eb0>, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836824 2022] [wsgi:error] [pid 568035] [client ::1:34956] Traceback (most recent call last):, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836853 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 74, in getUser, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836858 2022] [wsgi:error] [pid 568035] [client ::1:34956]     U = models.dbsession.query(models.Utente).filter_by(username=USER["username"]).one(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836861 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1589, in query, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836864 2022] [wsgi:error] [pid 568035] [client ::1:34956]     return self._query_cls(entities, self, **kwargs), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836867 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 197, in __init__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836871 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entities(entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836873 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 225, in _set_entities, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836877 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entity_selectables(self._entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836880 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 256, in _set_entity_selectables, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836883 2022] [wsgi:error] [pid 568035] [client ::1:34956]     ent.setup_entity(*d[entity]), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836886 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 4324, in setup_entity, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836889 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._with_polymorphic = ext_info.with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836892 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836895 2022] [wsgi:error] [pid 568035] [client ::1:34956]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836909 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 2155, in _with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836913 2022] [wsgi:error] [pid 568035] [client ::1:34956]     configure_mappers(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836916 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 3295, in configure_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836919 2022] [wsgi:error] [pid 568035] [client ::1:34956]     raise e, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836922 2022] [wsgi:error] [pid 568035] [client ::1:34956] sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Categoria->categorie'. Original exception was: When initializing mapper mapped class Categoria->categorie, expression 'Task' failed to locate a name ('Task'). If this is a class name, consider adding this relationship() to the <class 'models.Categoria'> class after both dependent classes have been defined., referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836932 2022] [wsgi:error] [pid 568035] [client ::1:34956] , referer: http://localhost:10000/home
+[Mon Oct 03 12:43:48.836953 2022] [wsgi:error] [pid 568035] [client ::1:34956] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c8388a7c0>, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250723 2022] [wsgi:error] [pid 568035] [client ::1:34956] Traceback (most recent call last):, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250773 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 74, in getUser, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250784 2022] [wsgi:error] [pid 568035] [client ::1:34956]     U = models.dbsession.query(models.Utente).filter_by(username=USER["username"]).one(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250793 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1589, in query, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250802 2022] [wsgi:error] [pid 568035] [client ::1:34956]     return self._query_cls(entities, self, **kwargs), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250810 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 197, in __init__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250819 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entities(entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250827 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 225, in _set_entities, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250835 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._set_entity_selectables(self._entities), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250844 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 256, in _set_entity_selectables, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250852 2022] [wsgi:error] [pid 568035] [client ::1:34956]     ent.setup_entity(*d[entity]), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250860 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 4324, in setup_entity, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250869 2022] [wsgi:error] [pid 568035] [client ::1:34956]     self._with_polymorphic = ext_info.with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250898 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250908 2022] [wsgi:error] [pid 568035] [client ::1:34956]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250916 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 2155, in _with_polymorphic_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250925 2022] [wsgi:error] [pid 568035] [client ::1:34956]     configure_mappers(), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250933 2022] [wsgi:error] [pid 568035] [client ::1:34956]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 3295, in configure_mappers, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250941 2022] [wsgi:error] [pid 568035] [client ::1:34956]     raise e, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250950 2022] [wsgi:error] [pid 568035] [client ::1:34956] sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Categoria->categorie'. Original exception was: When initializing mapper mapped class Categoria->categorie, expression 'Task' failed to locate a name ('Task'). If this is a class name, consider adding this relationship() to the <class 'models.Categoria'> class after both dependent classes have been defined., referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.250976 2022] [wsgi:error] [pid 568035] [client ::1:34956] , referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.251027 2022] [wsgi:error] [pid 568035] [client ::1:34956] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c836e8a00>, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.984863 2022] [wsgi:error] [pid 568035] [client ::1:34956] dict_items([('USER', 'giada.trinchieri'), ('USEROBJ', {'description': 'Giada Trinchieri', 'preferences': {'lang': 'IT'}, 'role': 'GUEST', 'userid': 31, 'username': 'giada.trinchieri'})]), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.985022 2022] [wsgi:error] [pid 568035] [client ::1:34956] dict_keys(['USER', 'USEROBJ']), referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.985219 2022] [wsgi:error] [pid 568035] [client ::1:34956] NO KEYS PRESENT, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.985337 2022] [wsgi:error] [pid 568035] [client ::1:34956] LOGIN_APP_DESCRIPTION= Codergame - IIS Pascal<br>Piattaforma di programmazione, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:49.985390 2022] [wsgi:error] [pid 568035] [client ::1:34956] MAIN_APP_TITLE= Codergame - IIS Pascal, referer: http://localhost:10000/home
+[Mon Oct 03 12:43:55.308759 2022] [wsgi:error] [pid 568033] [client ::1:45070] [2022-10-03 12:43:55,296] ERROR in app: Exception on /admin/students [GET], referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308804 2022] [wsgi:error] [pid 568033] [client ::1:45070] Traceback (most recent call last):, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308815 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 322, in _resolve_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308824 2022] [wsgi:error] [pid 568033] [client ::1:45070]     rval = d[token], referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308832 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/_collections.py", line 729, in __missing__, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308841 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self[key] = val = self.creator(key), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308849 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 301, in _access_cls, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308887 2022] [wsgi:error] [pid 568033] [client ::1:45070]     return self.fallback[key], referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308896 2022] [wsgi:error] [pid 568033] [client ::1:45070] KeyError: 'Task', referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308904 2022] [wsgi:error] [pid 568033] [client ::1:45070] , referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308912 2022] [wsgi:error] [pid 568033] [client ::1:45070] The above exception was the direct cause of the following exception:, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308920 2022] [wsgi:error] [pid 568033] [client ::1:45070] , referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308927 2022] [wsgi:error] [pid 568033] [client ::1:45070] Traceback (most recent call last):, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308935 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2447, in wsgi_app, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308944 2022] [wsgi:error] [pid 568033] [client ::1:45070]     response = self.full_dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308952 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1952, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308960 2022] [wsgi:error] [pid 568033] [client ::1:45070]     rv = self.handle_user_exception(e), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308969 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1821, in handle_user_exception, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308977 2022] [wsgi:error] [pid 568033] [client ::1:45070]     reraise(exc_type, exc_value, tb), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308984 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/_compat.py", line 39, in reraise, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308992 2022] [wsgi:error] [pid 568033] [client ::1:45070]     raise value, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.308999 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1950, in full_dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309007 2022] [wsgi:error] [pid 568033] [client ::1:45070]     rv = self.dispatch_request(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309015 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1936, in dispatch_request, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309023 2022] [wsgi:error] [pid 568033] [client ::1:45070]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309032 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 36, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309041 2022] [wsgi:error] [pid 568033] [client ::1:45070]     return fnz(*args, **kwargs), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309049 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/__init__.py", line 247, in admin_studenti, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309057 2022] [wsgi:error] [pid 568033] [client ::1:45070]     (status, html) = admin.students(session), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309065 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/tools.py", line 21, in f, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309084 2022] [wsgi:error] [pid 568033] [client ::1:45070]     return fnz(*args, **kwargs, USER=USER), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309093 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/media/HOMEDEV/WWW/wsgi/codergame/appdir/admin.py", line 32, in students, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309101 2022] [wsgi:error] [pid 568033] [client ::1:45070]     studenti = dbsession.query(Utente).order_by(Utente.cognome.asc()).filter_by(role='GUEST').all(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309110 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1589, in query, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309118 2022] [wsgi:error] [pid 568033] [client ::1:45070]     return self._query_cls(entities, self, **kwargs), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309127 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 197, in __init__, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309160 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self._set_entities(entities), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309171 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 225, in _set_entities, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309180 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self._set_entity_selectables(self._entities), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309188 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 256, in _set_entity_selectables, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309197 2022] [wsgi:error] [pid 568033] [client ::1:45070]     ent.setup_entity(*d[entity]), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309205 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 4324, in setup_entity, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309213 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self._with_polymorphic = ext_info.with_polymorphic_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309222 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309230 2022] [wsgi:error] [pid 568033] [client ::1:45070]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309239 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 2155, in _with_polymorphic_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309247 2022] [wsgi:error] [pid 568033] [client ::1:45070]     configure_mappers(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309255 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 3299, in configure_mappers, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309264 2022] [wsgi:error] [pid 568033] [client ::1:45070]     mapper._post_configure_properties(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309272 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/mapper.py", line 1965, in _post_configure_properties, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309281 2022] [wsgi:error] [pid 568033] [client ::1:45070]     prop.init(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309289 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/interfaces.py", line 197, in init, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309305 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self.do_init(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309313 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2077, in do_init, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309322 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self._process_dependent_arguments(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309330 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2148, in _process_dependent_arguments, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309339 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self.target = self.entity.persist_selectable, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309347 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 893, in __get__, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309356 2022] [wsgi:error] [pid 568033] [client ::1:45070]     obj.__dict__[self.__name__] = result = self.fget(obj), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309364 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/relationships.py", line 2044, in entity, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309372 2022] [wsgi:error] [pid 568033] [client ::1:45070]     argument = self.argument(), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309380 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 326, in _resolve_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309389 2022] [wsgi:error] [pid 568033] [client ::1:45070]     self._raise_for_name(name, err), referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309397 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/ext/declarative/clsregistry.py", line 304, in _raise_for_name, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309406 2022] [wsgi:error] [pid 568033] [client ::1:45070]     util.raise_(, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309414 2022] [wsgi:error] [pid 568033] [client ::1:45070]   File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/compat.py", line 182, in raise_, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309422 2022] [wsgi:error] [pid 568033] [client ::1:45070]     raise exception, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:55.309430 2022] [wsgi:error] [pid 568033] [client ::1:45070] sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Categoria->categorie, expression 'Task' failed to locate a name ('Task'). If this is a class name, consider adding this relationship() to the <class 'models.Categoria'> class after both dependent classes have been defined., referer: http://localhost:10000/?
+[Mon Oct 03 12:43:56.350974 2022] [wsgi:error] [pid 568036] [client ::1:45072] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:56.352363 2022] [wsgi:error] [pid 568036] [client ::1:45072] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:43:56.353661 2022] [wsgi:error] [pid 568036] [client ::1:45072] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:43:56.353681 2022] [wsgi:error] [pid 568036] [client ::1:45072] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:43:56.364307 2022] [wsgi:error] [pid 568036] [client ::1:45072] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83cb7f10>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:02.956284 2022] [wsgi:error] [pid 568034] [client ::1:45074] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83cb7f10>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:04.462521 2022] [wsgi:error] [pid 568034] [client ::1:45074] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:04.462580 2022] [wsgi:error] [pid 568034] [client ::1:45074] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:44:04.465716 2022] [wsgi:error] [pid 568034] [client ::1:45074] 2, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:04.465743 2022] [wsgi:error] [pid 568034] [client ::1:45074] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:44:04.466097 2022] [wsgi:error] [pid 568034] [client ::1:45074] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83a3e400>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:11.291343 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83cb7f10>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:12.508072 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83a95df0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:12.994330 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83915f70>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:13.183767 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c8378feb0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:13.392913 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83605fd0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:14.856246 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c8348b6a0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:15.678747 2022] [wsgi:error] [pid 568037] [client ::1:39146] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:15.680579 2022] [wsgi:error] [pid 568037] [client ::1:39146] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:44:15.681838 2022] [wsgi:error] [pid 568037] [client ::1:39146] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:44:15.681862 2022] [wsgi:error] [pid 568037] [client ::1:39146] [], referer: http://localhost:10000/?
+[Mon Oct 03 12:44:15.688243 2022] [wsgi:error] [pid 568037] [client ::1:39146] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c833312b0>, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:48.449580 2022] [wsgi:error] [pid 568089] [client ::1:53976] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83cb7f10>, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.065532 2022] [wsgi:error] [pid 568089] [client ::1:53976] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.066932 2022] [wsgi:error] [pid 568089] [client ::1:53976] [<models.TestCase object at 0x7f8c8390da90>, <models.TestCase object at 0x7f8c8390db20>, <models.TestCase object at 0x7f8c8390db80>], referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.068029 2022] [wsgi:error] [pid 568089] [client ::1:53976] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.068052 2022] [wsgi:error] [pid 568089] [client ::1:53976] [<models.TestCase object at 0x7f8c8390da90>, <models.TestCase object at 0x7f8c8390db20>, <models.TestCase object at 0x7f8c8390db80>], referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.074812 2022] [wsgi:error] [pid 568089] [client ::1:53976] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c83a98d00>, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.698420 2022] [wsgi:error] [pid 568089] [client ::1:53976] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.699660 2022] [wsgi:error] [pid 568089] [client ::1:53976] [<models.TestCase object at 0x7f8c837ad970>, <models.TestCase object at 0x7f8c837ada00>, <models.TestCase object at 0x7f8c837ada60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.700623 2022] [wsgi:error] [pid 568089] [client ::1:53976] 1, referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.700646 2022] [wsgi:error] [pid 568089] [client ::1:53976] [<models.TestCase object at 0x7f8c837ad970>, <models.TestCase object at 0x7f8c837ada00>, <models.TestCase object at 0x7f8c837ada60>], referer: http://localhost:10000/?
+[Mon Oct 03 12:45:50.701608 2022] [wsgi:error] [pid 568089] [client ::1:53976] closing  <sqlalchemy.engine.base.Connection object at 0x7f8c838c8be0>, referer: http://localhost:10000/?

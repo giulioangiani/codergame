@@ -1,0 +1,56 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<a href='#' class="text-left nav-link ajaxlink" fn="codergame" 
+			id='codergame'><< Torna alla dashboard </a>
+				
+	<div style='padding:2em'>
+
+		<form id='form_upload_file'>
+				<input id='quizid' type='hidden' class="form-control input text-left" value="{{quizid}}">
+			
+			
+				<div class="row mx-n2">
+
+					<div class="form-group col pl-2">
+						{% include "cg_quizbox.html" %}
+					</div>
+
+				</div>
+				
+				
+				<div class="row mx-n2">
+
+					<div class="form-group col pl-2">
+						<label for="ragionesociale">Linguaggio usato</label>
+						<select id='language' class="form-control text-left">
+							<option value=''> -- scegli un linguaggio --</option>
+							<option value="CPP" selected>C++</option>
+							<option value="PYTHON">python</option>
+						</select>
+					</div>
+
+				</div>
+				
+				<div class="row mx-n2">
+					
+					<div class="form-group col pl-2">
+						<label for="ragionesociale">Seleziona il file sorgente</label>
+						<div><input type='file' name='codefile' id='codefile' class="form-control text-left"></div>
+					</div>
+
+				</div>
+
+				<div id='bottom-panel'>
+				  <button type="button" fn='upload' id='btn-upload' class="btn btn-success">Upload</button>
+				</div>
+
+				<div id='results-panel' class='alert alert-danger mt-3'></div>
+
+		</form>
+	</div>
+
+	<a href='#' class="text-left nav-link ajaxlink" fn="codergame" 
+			id='codergame'><< Torna alla dashboard </a>
+
+{% endblock %}

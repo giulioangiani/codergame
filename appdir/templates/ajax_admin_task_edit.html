@@ -1,0 +1,142 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<div class='p-3'>
+		
+		<style>
+			#options {display:none;
+							float: left;
+							position: fixed;
+							z-index: 2000;
+							width: 700px;
+							background-color: #FFF1C2;
+							display: block;
+							position: absolute;
+							overflow-y: auto;
+							max-height: 300px;
+							border: 2px solid #bbb;
+							border-radius: 0px 0px 5px 5px;
+					}
+			#options .option_item {
+				padding: 3px;
+				border-bottom: 1px solid #bbb;
+    		}
+			
+			#options .option_item:hover {
+				background-color: #FFDC68;
+			}
+		
+			#calcolacf {
+				float: right;
+				padding: 8px 5px;
+				text-decoration: underline;
+			}
+		</style>
+		
+		
+		
+		
+		<form id='scheda_task'>
+			<div class="row mx-n2">
+			  <div class="form-group col-4 pl-2">
+				<label for="exampleInputEmail1">Titolo</label>
+				<input type="text" class="form-control text-left" id="titolo"  value="{{task.titolo}}">
+			  </div>
+			  <div class="form-group col-4 px-2">
+				<label for="">Sottotitolo</label>
+				<input type="text" class="form-control text-left" id="sottotitolo" value="{{task.sottotitolo}}">
+			  </div>
+			  <div class="form-group col-2 px-2">
+				<label for="">Difficolta</label>
+				<input type="text" class="form-control text-right" style='max-width:100px' id="difficolta" value="{{task.difficolta}}">
+			  </div>
+			  <div class="form-group col-2 px-2">
+				<label for="">Categoria</label>
+				<select class="form-control text-left" id="categoria_id">
+					<option value=''>-- seleziona --</option>
+					{% for c in categorie %}
+						<option value='{{c.id}}'
+						
+							{% if task.categoria == c %} SELECTED {% endif %}
+							
+						>{{ c.nomecategoria }}</option>
+					{% endfor %}
+				</select>
+			  </div>
+			</div>
+			<div class="row mx-n2">
+			  <div class="form-group col pl-2">
+				<label for="">Testo del problema</label>
+				<textarea class="form-control text-left form-group col pl-2"
+					style='min-height:300px; font-family:monospace'
+					id='html_text'>{{task.html_text}}</textarea>
+			  </div>
+
+			  <div class="form-group col pl-2">
+				<label for="">VERSIONE HTML</label>
+				<div id='versione_html' style='overflow-y:auto; height:300px'>
+					{{task.html_text|safe}}
+				</div>
+			  </div>
+			</div>
+
+
+			
+			<div id='bottom-panel'>
+			{% if USER.role in ( 'ADMIN') %}
+
+			  <button type="button" id='btn-modify' 
+				fn = "/admin/task/update"
+				task_id = "{{task.id}}"
+				class="btn btn-success mt-3">Modifica</button>
+				  
+			{% endif %}
+				<span id='text-result'></span>
+				  
+				<button type="button" id='btn-close' class="btn btn-info mt-3 float-right">Chiudi</button>
+			</div>
+			<div id='bottom-msg' class='text-primary'></div>
+		
+		</form>
+	
+			<div class="row mx-n2">
+			  <div class="form-group col pl-2" id='testcases_list'>
+				<label for="">TestCases</label>  
+				
+				{% for tc in task.testcases %}
+					<div>
+						<b>INPUT : </b> {{ tc.input_text }}  <span class='fa fa-arrow-right'></span>
+						<b>OUTPUT ATTESO : </b> {{ tc.output_atteso }} :  
+						<b>PUNTEGGIO : </b> {{ tc.punteggio }} <br>
+					</div>
+				{% endfor %}
+			  </div>
+			</div>
+			<div class="row mx-n2">
+				<div id='add_test_case_div' class='col pl-12'>
+					<div class="row mx-n2">
+						<div class="form-group col-5 pl-2">
+							INPUT : <textarea style='min-height:150px' class="form-control text-left" id="new_input" ></textarea>
+						</div>
+						<div class="form-group col-5 pl-2">
+							OUTPUT ATTESO : <textarea style='min-height:150px' class="form-control text-left" id="new_output" ></textarea>
+						</div>
+						<div class="form-group col-5 pl-2">
+							PUNTEGGIO : <input type="text" class="form-control text-left" id="new_punteggio"  value="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<button class='btn btn-info mt-3'
+					id='link_add_testcase'
+					fn = "/admin/task/addtestcase"
+					task_id = "{{task.id}}"
+				>Aggiungi nuovo testcase a questo task</button>
+			</div>
+					
+	
+	</div>
+
+
+{% endblock %}

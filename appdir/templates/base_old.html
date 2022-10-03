@@ -1,0 +1,82 @@
+{% extends "empty.html" %}
+
+{% block custom_css %}<link rel="stylesheet" href="/static/css/app.css">{% endblock %}
+
+
+{% block title %}{{ MAIN_APP_TITLE }}{% endblock %}
+    
+
+    {% block menubar %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">{{ MAIN_APP_TITLE }} </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        </ul>
+        <form class="text-warning form-inline mt-2 mt-md-0">
+			<span class='text-white p-2'>Ciao, </span> {{ session["USEROBJ"]["description"] }}
+
+            <a class="nav-link text-info" id='link_logout' href="#">Logout</a>
+        </form>
+      </div>
+    </nav>
+
+    <div class="wrapper d-flex align-items-stretch">
+		<nav id="sidebar" class="active">
+				<div class="custom-menu">
+						<button type="button" id="sidebarCollapse" class="btn btn-primary">
+				            <i class="fa fa-bars"></i>
+				            <span class="sr-only">Toggle Menu</span>
+                        </button>
+			    </div>
+				<div class="p-4">
+
+    				<!-- GUESTS -->
+    				{% if session["USEROBJ"].role == "GUEST" %}
+						<h1><a href="#" class="logo">Database attivi</a></h1>
+						{% for d in databases %}
+							
+							{% if d.attivo == 1 %}
+								<ul class="list-unstyled components">
+								  <li class="active">
+									<a fn="dashboard" id_database='{{d.id}}' id='dashboard'><span class="fa fa-home mr-3"></span>{{d.description}}</a>
+								  </li>
+								</ul>
+							{% endif %}
+						
+						{% endfor %}
+    				
+						<ul class="list-unstyled components mb-5 d-none">
+						  <li class="active">
+							<a fn="dashboard" id='dashboard'><span class="fa fa-home mr-3"></span>Dashboard</a>
+						  </li>
+						</ul>
+    				{% endif %}
+
+					<!-- ADMIN -->
+    				{% if session["USEROBJ"].role == "TEACHER" %}
+						<h1><a href="index.html" class="logo">Funzioni</a></h1>
+						<ul class="list-unstyled components mb-5">
+						  <li class="active">
+							<a fn="admin/databases" id='admin'><span class="fa fa-home mr-3"></span>Databases</a>
+						  </li>
+						</ul>
+    				{% endif %}
+					
+					
+
+    				<div class="footer">
+    				</div>
+
+			  </div>
+		</nav>
+	</div>
+
+ 
+ 
+    {% endblock %}
