@@ -27,7 +27,13 @@
 				<td>{{s.utente().cognome}} {{s.utente().nome}} [{{s.utente().gruppo.nomegruppo}}]</td>
 				<td>{{s.timestamp}}</td>
 				<td>{{s.punteggio}} / {{s.task().maxpoints}}</td>
-				<td></td>
+				<td>
+					<span class='fa fa-remove fa-2x text-danger editobject' 
+						fn="admin/submission/delete"
+						delete_current_row="Y"
+						_object_id='{{s.id}}'></span>
+				
+				</td>
 			</tr>
 		{% endfor %}
 		</tbody>

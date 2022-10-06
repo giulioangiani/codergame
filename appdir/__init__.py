@@ -259,6 +259,12 @@ def admin_submissions():
 	(status, html) = admin.submissions(session)
 	return genericJsonResponse(status, html)
 
+@app.route('/admin/submission/delete/<submission_id>', methods=["GET"])
+@protected
+def admin_submissions_delete(submission_id):
+	print("QUI")
+	(status, html) = admin.submissions_delete(session, submission_id)
+	return genericJsonResponse(status, html)
 
 @app.route('/admin/tasks', methods=["GET"])
 @protected

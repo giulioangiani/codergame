@@ -41,15 +41,20 @@ Sottomissioni = Table('sottomissioni', Base.metadata,
 		Column('submission_id', Integer, ForeignKey('submissions.id'))
 	)
 
+class TestCase(Base):
+	__tablename__ = 'testcases'
 	
-class Categoria(Base):
-	__tablename__ = 'categorie'
+	def __init__(self, it='', ot='', p='', task=None):
+		if it: self.input_text = it
+		if ot: self.output_atteso = ot
+		if p: self.punteggio = p
+		if task: self.task = task
+	
 	id = Column(Integer, primary_key=True)
-	nomecategoria = Column(String(100))
-	descrizione = Column(Text)
-	tasks = relationship("Task", backref="categoria")
-
-
+	input_text = Column(Text)
+	output_atteso = Column(Text)
+	punteggio = Column(Integer)
+	task_id = Column(ForeignKey('tasks.id'))
 
 class Task(Base):
 	__tablename__ = 'tasks'
@@ -71,21 +76,19 @@ class Task(Base):
 
 	def sottomissioni(self):
 		return dbsession.query(Sottomissioni).filter_by(task_id=self.id).all()
-
-class TestCase(Base):
-	__tablename__ = 'testcases'
 	
-	def __init__(self, it='', ot='', p='', task=None):
-		if it: self.input_text = it
-		if ot: self.output_atteso = ot
-		if p: self.punteggio = p
-		if task: self.task = task
-	
+class Categoria(Base):
+	__tablename__ = 'categorie'
 	id = Column(Integer, primary_key=True)
-	input_text = Column(Text)
-	output_atteso = Column(Text)
-	punteggio = Column(Integer)
-	task_id = Column(ForeignKey('tasks.id'))
+	nomecategoria = Column(String(100))
+	descrizione = Column(Text)
+	tasks = relationship("Task", backref="categoria")
+
+
+
+
+
+
 
 class Gruppo(Base):
 	__tablename__ = 'gruppi'

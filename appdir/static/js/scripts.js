@@ -90,7 +90,8 @@ $(document).delegate(".editobject", "click", function(){
 	var _object_id = $(this).attr("_object_id");
 	console.log(fn)
 	var url = "/"+fn+"/"+_object_id;
-
+	var delete_current_row = $(this).attr("delete_current_row");
+	$this=$(this);
 	$.ajax({
 	  type: "GET",			// il method
 	  url: url,				// la action
@@ -103,6 +104,9 @@ $(document).delegate(".editobject", "click", function(){
 	  success: function(risposta) {
 		  if (risposta["status"] == 'OK') {
 			  $("#BasicModal .modal-content").html(risposta["html"]);
+			  if (delete_current_row=='Y') {
+				  $this.parent().parent().fadeOut("slow");
+			  }
 		  }
 		  else {
 			  $("#BasicModal .modal-content").html("Errore generico");

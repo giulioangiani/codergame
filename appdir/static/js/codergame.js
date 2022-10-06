@@ -124,7 +124,6 @@ $(document).delegate("#scheda_task #btn-modify", "click", function(){
 
 
 $(document).delegate("#link_add_testcase", "click", function(){
-	alert("QUI");
 	var task_id = $(this).attr("task_id");
 	var fn = $(this).attr("fn");
 	var new_input = $("#new_input").val();

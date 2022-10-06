@@ -64,6 +64,13 @@ def submissions(session, USER=None):
 	submissions = dbsession.query(Submission).all()
 	return "OK",  render_template("ajax_admin_lista_sottoposizioni.html", **vars())
 
+@initialize
+def submissions_delete(session, submission_id, USER=None):
+	print("DEL submission_id", submission_id)
+	submission = dbsession.query(Submission).get(submission_id)
+	dbsession.delete(submission)
+	dbsession.commit()
+	return "OK",  "<span class='m-3 text-success'>Sottomissione cancellata con successo</span>"
 
 @initialize
 def tasks(session, USER=None):
