@@ -16,8 +16,6 @@ dbsession = Session()
 conn = engine.connect()
 
 
-
-
 import time
 import hashlib
 import random
@@ -55,7 +53,7 @@ class TestCase(Base):
 	output_atteso = Column(Text)
 	punteggio = Column(Integer)
 	task_id = Column(ForeignKey('tasks.id'))
-
+	
 class Task(Base):
 	__tablename__ = 'tasks'
 	id = Column(Integer, primary_key=True)
@@ -76,19 +74,24 @@ class Task(Base):
 
 	def sottomissioni(self):
 		return dbsession.query(Sottomissioni).filter_by(task_id=self.id).all()
-	
+		
+	def copy(self):
+		t = Task()
+		t.titolo=self.titolo
+		t.sottotitolo=self.sottotitolo
+		t.html_text=self.html_text
+		t.difficolta=self.difficolta
+		t.categoria_id=self.categoria_id
+		return t
+
+
+
 class Categoria(Base):
 	__tablename__ = 'categorie'
 	id = Column(Integer, primary_key=True)
 	nomecategoria = Column(String(100))
 	descrizione = Column(Text)
 	tasks = relationship("Task", backref="categoria")
-
-
-
-
-
-
 
 class Gruppo(Base):
 	__tablename__ = 'gruppi'
@@ -97,8 +100,7 @@ class Gruppo(Base):
 	descgruppo = Column(String(100))
 	studenti = relationship("Utente", backref="gruppo", order_by="Utente.cognome")
 	tasks = relationship('Task', secondary=GruppiTask, backref='gruppo')
-
-
+	
 class Submission(Base):
 	__tablename__ = 'submissions'
 	id = Column(Integer, primary_key=True)

@@ -120,6 +120,51 @@ $(document).delegate(".editobject", "click", function(){
 });
 
 
+$(document).delegate(".filtrarighe", "click", function(){
+	var table_ref_id = $(this).attr("table_ref_id");
+	var findattribute = $(this).attr("findattribute");
+	var checked = $(this).prop("checked");
+	console.log(checked);
+	var valore = $(this).attr("valore");
+//	$("#"+table_ref_id+" tbody tr").show();
+	if (!checked) {		// valore precedente al click
+		$("#"+table_ref_id+" tbody tr["+findattribute+"="+valore+"]").hide();
+	}
+	else {
+		$("#"+table_ref_id+" tbody tr["+findattribute+"="+valore+"]").show();
+	}
+})
+
+$(document).delegate(".tr_ordering", "click", function(){
+	var table_ref_id = $(this).attr("table_ref_id");
+	var order_attribute = $(this).attr("order_attribute");
+	var rows = $("#"+table_ref_id+" tbody tr");
+	var mode = $(this).attr("mode");
+	var ordered_rows = Array();
+	var table_body = $("#"+table_ref_id+" tbody");
+	for (var i=0; i<rows.length; i++) {
+		var elem = rows[i];
+		console.log(elem.getAttribute("punti_studente"));
+		var order_code = elem.getAttribute("punti_studente");
+		ordered_rows.push(Array(order_code, elem));
+	}
+	ordered_rows.sort()
+	if (mode == 'asc') { 
+		$(this).attr("mode", "desc");
+		ordered_rows.reverse()
+	}
+	else {
+		$(this).attr("mode", "asc");
+	}
+	console.log(ordered_rows)
+	table_body.children().remove()
+	for (var i=0; i<rows.length; i++) {
+		table_body.append(ordered_rows[i][1]);
+	}
+	
+})
+
+
 
 function setSpin(spinid) {
 	if (!spinid) spinid="basicspin"
@@ -161,6 +206,9 @@ $(document).delegate(".starvalutazione", "click", function(){
 
 	
 });
+
+
+
 
 
 

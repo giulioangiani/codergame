@@ -16,30 +16,27 @@ import json
 from costanti import *
 
 @initialize
-def risultati(session, USER=None):
-	subtitle = ""
-	pagetitle= " RISULTATI "
-	elaborati = dbsession.query(Elaborato).all()
-	U = getUser(USER)
-	descr_tipologie = DESCR_TIPOLOGIE
-	return "OK",  render_template("ajax_admin_risultati.html", **vars())
-
-
-@initialize
 def students(session, USER=None):
 	subtitle = ""
 	pagetitle= " Lista studenti "
 	studenti = dbsession.query(Utente).order_by(Utente.cognome.asc()).filter_by(role='GUEST').all()
+	gruppi = dbsession.query(Gruppo).all()
 	
 	dic_results = {}
 	num_results = {}
+	punti_per_studente = {}
+	max_punti_per_studente = {}
 	for s in studenti:
 		num_results[s] = {"R":0, "N":0, "P":0}
 		dic_results[s] = {}
+		punti_per_studente[s] = 0
+		max_punti_per_studente[s] = 0
 		tasks = s.gruppo.tasks
 		for t in tasks:
 			dic_results[s][t] = {}
 			maxpoints_per_task = s.getMaxPointsPerTask(t)
+			punti_per_studente[s] += maxpoints_per_task
+			max_punti_per_studente[s] += t.maxpoints
 			if  maxpoints_per_task == t.maxpoints:
 				dic_results[s][t] = 'R'
 			elif  maxpoints_per_task == 0:
@@ -76,6 +73,7 @@ def submissions_delete(session, submission_id, USER=None):
 def tasks(session, USER=None):
 	subtitle = ""
 	pagetitle= " Lista Task "
+	categorie = dbsession.query(Categoria).all()
 	tasks = dbsession.query(Task).all()
 	return "OK",  render_template("ajax_admin_lista_tasks.html", **vars())
 
@@ -112,13 +110,20 @@ def task_update(session, object_id, USER=None):
 	dbsession.commit()
 	return "OK",  "Update correctly"
 
+def task_duplica(session, object_id, USER=None):
+	task = dbsession.query(Task).get(object_id)
+	newtask = task.copy()
+	dbsession.add(newtask)
+	dbsession.commit()
+	return "OK",  "Duplicated correctly"
+
 
 @initialize
 def task_abilita_disabilita(session, mode, USER=None):
 	task_id = request.form.get('task_id')
 	gruppo_id = request.form.get('gruppo_id')
 	task = dbsession.query(Task).get(task_id)
-	print("task=", task)
+#	print("task=", task)
 	gruppo = dbsession.query(Gruppo).get(gruppo_id)
 	print("gruppo=", gruppo)
 	if mode == 'R':

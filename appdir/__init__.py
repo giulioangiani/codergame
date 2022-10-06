@@ -56,14 +56,11 @@ import models
 from flask.signals import request_finished
 def expire_session(sender, response, **extra):
 	dbsession.expire_all()
-	import importlib
-	importlib.reload(dashboard)
-	importlib.reload(models)
-	importlib.reload(admin)
+#	import importlib
+#	importlib.reload(dashboard)
+#	importlib.reload(models)
+#	importlib.reload(admin)
 request_finished.connect(expire_session, app)
-
-
-
 
 import dashboard
 import codergame
@@ -235,16 +232,18 @@ def codergame_results():
 
 ### ADMIN
 
-@app.route('/admin/results', methods=["GET"])
-@protected
-def admin_risultati():
-	(status, html) = admin.risultati(session)
-	return genericJsonResponse(status, html)
 	
+@app.route('/admin/home', methods=["GET"])
 @app.route('/admin/students', methods=["GET"])
 @protected
 def admin_studenti():
 	(status, html) = admin.students(session)
+	return genericJsonResponse(status, html)
+
+@app.route('/admin/results', methods=["GET"])
+@protected
+def admin_risultati():
+	(status, html) = admin.risultati(session)
 	return genericJsonResponse(status, html)
 
 @app.route('/admin/groups', methods=["GET"])
@@ -295,7 +294,12 @@ def admin_task_update(object_id):
 def admin_task_addtestcase():
 	(status, html) = admin.task_addtestcase(session)
 	return genericJsonResponse(status, html)
-
+	
+@app.route('/admin/task/duplica/<object_id>', methods=["GET"])
+@protected
+def admin_task_duplica(object_id):
+	(status, html) = admin.task_duplica(session, object_id)
+	return genericJsonResponse(status, html)
 
 
 @app.route('/admin/task/assegna/<object_id>', methods=["GET"])

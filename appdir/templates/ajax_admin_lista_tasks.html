@@ -3,6 +3,17 @@
 	<button type="button" id='add-button' class="btn btn-info mb-3 editobject"
 		fn='admin/task/new' _object_id='-1'
 		>Nuovo Task</button>
+
+	<div class="row mx-n2" id='filtro_tasks'>
+		{% for c in categorie %}
+			<div class="form-group col-2">
+				<input class='filtrarighe' findattribute='categoria_id' table_ref_id='table_tasks'
+						valore='{{c.id}}'
+						type='checkbox'  style='width:30px; height:20px' checked>{{c.nomecategoria}} [{{c.tasks|count}}]
+			</div>
+		{% endfor %}
+	</div>
+	
 	<table id='table_tasks' class='table table-striped'>
 		<thead>
 			<tr>
@@ -18,7 +29,7 @@
 		</thead>
 		<tbody>
 		{% for t in tasks %}
-			<tr>
+			<tr categoria_id='{{t.categoria.id}}'>
 				<td>{{t.titolo}}</td>
 				<td>{{t.sottotitolo}}</td>
 				<td class='text-center'>{{t.difficolta}}</td>
@@ -31,13 +42,19 @@
 				<td>
 					<span class='fa fa-edit fa-2x editobject'
 						fn='admin/task/edit/'
-						_object_id='{{t.id}}'
+						_object_id='{{t.id}}' title='edit task'
 						></span>
 
 					<span class='fa fa-tasks fa-2x editobject'
 						fn='admin/task/assegna/'
-						_object_id='{{t.id}}'
+						_object_id='{{t.id}}' title='assegna task'
 						></span>
+
+					<span class='fa fa-clone fa-2x editobject'
+						fn='admin/task/duplica/'
+						_object_id='{{t.id}}' title='duplica task'
+						></span>
+
 				</td>
 			</tr>
 		{% endfor %}
