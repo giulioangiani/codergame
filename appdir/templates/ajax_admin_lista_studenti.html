@@ -2,17 +2,20 @@
 {% block content %}
 
 	<div class="row mx-n2" id='filtro_gruppi'>
+		<label>Gruppi abilitati alla gara : </label>
 		{% for g in gruppi %}
-			<div class="form-group col-2">
-				<input class='filtrarighe' findattribute='gruppo_id' table_ref_id='table_studenti'
-						valore='{{g.id}}'
-						type='checkbox'  style='width:30px; height:20px' checked>{{g.nomegruppo}}
-			</div>
+			{% if g.in_gara == 1 %}
+				<div class="form-group col-1">
+					<input class='filtrarighe' findattribute='gruppo_id' table_ref_id='table_studenti'
+							valore='{{g.id}}'
+							type='checkbox'  style='width:30px; height:20px' checked>{{g.nomegruppo}}
+				</div>
+			{% endif %}
 		{% endfor %}
 	</div>
 
-	<table id='table_studenti' class='table table-striped'>
-		<thead>
+	<table id='table_studenti' class='table table-striped cellbordered'>
+		<thead class="text-center">
 			<tr>
 				<th>Cognome</th>
 				<th>Nome</th>
@@ -21,29 +24,32 @@
 				<th>risolti</th>
 				<th>parz. risolti</th>
 				<th>non risolti</th>
-				<th class='tr_ordering' mode='asc' order_attribute='punti_studente' table_ref_id='table_studenti'>punteggio</th>
+				<th class='tr_ordering' mode='asc' 
+					order_attribute='punti_studente' table_ref_id='table_studenti'><u>punteggio</u></th>
 				<th>%</th>
 			</tr>
 		</thead>
 		<tbody>
 		{% for s in studenti %}
-			<tr punti_studente='{{punti_per_studente[s]}}' gruppo_id='{{s.gruppo.id}}'>
-				<td>{{s.cognome}}</td>
-				<td>{{s.nome}}</td>
-				<td>{{s.gruppo.nomegruppo}}</td>
-				<td>{{s.gruppo.tasks|count}}</td>
-				<td width="100px">{% for i in range(num_results[s]["R"]) %} <span class='fa fa-check text-success fa-2x'></span> {% endfor %}</td>
-				<td width="100px">{% for i in range(num_results[s]["P"]) %} <span class='fa fa-clock-o text-warning fa-2x'></span> {% endfor %}</td>
-				<td width="100px">{% for i in range(num_results[s]["N"]) %} <span class='fa fa-times text-danger fa-2x'></span> {% endfor %}</td>
-				<td class='text-right pr-3'>
-					{{punti_per_studente[s]}} / {{max_punti_per_studente[s]}}
-				</td>
-				<td class='text-right pr-3'>
-					{% if max_punti_per_studente[s] > 0 %} 
-						{{ ((punti_per_studente[s] * 100) / max_punti_per_studente[s]) | int }} %
-					{% endif %}
-				</td>
-			</tr>
+			{% if s.gruppo.in_gara == 1 %}
+				<tr punti_studente='{{punti_per_studente[s]}}' gruppo_id='{{s.gruppo.id}}'>
+					<td width="20%">{{s.cognome}}</td>
+					<td width="20%">{{s.nome}}</td>
+					<td class='text-center'>{{s.gruppo.nomegruppo}}</td>
+					<td class='text-center' width="100px">{{s.gruppo.tasks|count}}</td>
+					<td  class='text-center'  width="150px">{% for i in range(num_results[s]["R"]) %} <span class='fa fa-check text-success fa-2x'></span> {% endfor %}</td>
+					<td  class='text-center'  width="150px">{% for i in range(num_results[s]["P"]) %} <span class='fa fa-clock-o text-warning fa-2x'></span> {% endfor %}</td>
+					<td  class='text-center'  width="150px">{% for i in range(num_results[s]["N"]) %} <span class='fa fa-times text-danger fa-2x'></span> {% endfor %}</td>
+					<td width="100px" class='text-right pr-3'>
+						{{punti_per_studente[s]}} / {{max_punti_per_studente[s]}}
+					</td>
+					<td class='text-right pr-3'>
+						{% if max_punti_per_studente[s] > 0 %} 
+							{{ ((punti_per_studente[s] * 100) / max_punti_per_studente[s]) | int }} %
+						{% endif %}
+					</td>
+				</tr>
+			{% endif %}
 		{% endfor %}
 		</tbody>
 	</table>	

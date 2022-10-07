@@ -27,6 +27,11 @@ div.panel-totale {
 }
 
 
+table.cellbordered td, table.cellbordered th {
+	border-right: 1px solid #999999;
+	padding: 2px;
+}
+
 span.span_punti  {
     border: 1px solid #777777;
     padding: 10px 10px;
