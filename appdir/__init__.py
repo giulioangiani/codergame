@@ -60,7 +60,7 @@ def expire_session(sender, response, **extra):
 #	import importlib
 #	importlib.reload(dashboard)
 #	importlib.reload(models)
-	importlib.reload(admin)
+#	importlib.reload(admin)
 request_finished.connect(expire_session, app)
 
 import dashboard
@@ -228,8 +228,25 @@ def codergame_results():
 
 ### ADMIN
 
-	
 @app.route('/admin/home', methods=["GET"])
+@protected
+def admin_home():
+	(status, html) = admin.home(session)
+	return genericJsonResponse(status, html)
+
+@app.route('/admin/uploadusers', methods=["GET"])
+@protected
+def admin_uploadusers():
+	(status, html) = admin.uploadusers(session)
+	return genericJsonResponse(status, html)
+	
+
+@app.route('/admin/uploadusers/execute', methods=["POST"])
+@protected
+def admin_uploadusers_execute():
+	(status, html) = admin.uploadusers_execute(session)
+	return genericJsonResponse(status, html)	
+	
 @app.route('/admin/students', methods=["GET"])
 @protected
 def admin_studenti():

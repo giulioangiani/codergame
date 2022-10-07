@@ -8,6 +8,7 @@
 				<th>Descrizione</th>
 				<th>Studenti</th>
 				<th>Tasks</th>
+				<th>In gara</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -18,6 +19,24 @@
 				<td>{{g.studenti|count}}</td>
 				<td>
 					{% for t in g.tasks %}{{t.titolo}} [D. {{t.difficolta}}]<br>{% endfor %}
+				</td>
+				<td>	
+					{% if g.in_gara == 1 %}
+						<span class='fa fa-circle fa-2x text-success editobject'
+							fn="admin/group/abilitazione/on/"
+							_object_id="{{g.id}}"
+							callbackfn="$('#groups').click()"
+							
+						></span>
+					{% else %}
+						<span class='fa fa-circle fa-2x text-dark editobject'
+							fn="admin/group/abilitazione/off/"
+							_object_id="{{g.id}}"
+							callbackfn="$('#groups').click()"
+							
+						></span>
+					{% endif %}
+				
 				</td>
 			</tr>
 		{% endfor %}

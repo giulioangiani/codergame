@@ -84,13 +84,22 @@ $(document).delegate("#btn-close", "click", function(){
 	$("#BasicModal").modal("hide");
 });
 
+function saluta() {
+	alert("ciao");
+}
 
 $(document).delegate(".editobject", "click", function(){
 	var fn = $(this).attr("fn");
 	var _object_id = $(this).attr("_object_id");
-	console.log(fn)
-	var url = "/"+fn+"/"+_object_id;
+	var solofn = $(this).attr("solofn");
+	if (solofn == "1") {
+		var url = "/"+fn
+	}
+	else {
+		var url = "/"+fn+"/"+_object_id;
+	}
 	var delete_current_row = $(this).attr("delete_current_row");
+	var callbackfn= $(this).attr("callbackfn");
 	$this=$(this);
 	$.ajax({
 	  type: "GET",			// il method
@@ -99,13 +108,20 @@ $(document).delegate(".editobject", "click", function(){
 	  data: {
 	  },
 	  beforeSend: function() {
-		  $("#BasicModal").modal()
+		  if (!callbackfn) {
+				$("#BasicModal").modal()
+		  }
 	  },
 	  success: function(risposta) {
 		  if (risposta["status"] == 'OK') {
-			  $("#BasicModal .modal-content").html(risposta["html"]);
-			  if (delete_current_row=='Y') {
-				  $this.parent().parent().fadeOut("slow");
+			  if (callbackfn) {
+				  eval(callbackfn);
+			  }
+			  else {
+				  $("#BasicModal .modal-content").html(risposta["html"]);
+				  if (delete_current_row=='Y') {
+					  $this.parent().parent().fadeOut("slow");
+				  }
 			  }
 		  }
 		  else {

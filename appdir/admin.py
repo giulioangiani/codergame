@@ -12,8 +12,51 @@ importlib.reload(models)
 from models import *
 import time
 import json
+from csv import DictReader
 
 from costanti import *
+
+@initialize
+def home(session, USER=None):
+	subtitle = ""
+	pagetitle= "Dashboard"
+	return "OK",  render_template("ajax_admin_home.html", **vars())
+	
+@initialize
+def uploadusers(session, USER=None):
+	subtitle = ""
+	pagetitle= "Uploading users"
+	return "OK",  render_template("ajax_admin_uploadusers.html", **vars())
+
+@initialize
+def uploadusers_execute(session, USER=None):
+	import io
+	codefile = request.files["codefile"]
+	contenuto_codefile = io.BytesIO(codefile.read())
+	content = contenuto_codefile.read()
+	fname = MAIN_UPLOAD_USERS_DIR + time.strftime("%Y%m%d_%H%M%S", time.localtime(time.time()))
+	open(fname, 'wb').write(content)
+		
+	cont = 0
+	with open(fname, 'r') as read_obj:
+		# pass the file object to reader() to get the reader object
+		csv_reader = DictReader(read_obj)
+		# Iterate over each row in the csv using reader object
+		for row in csv_reader:
+			# row variable is a list that represents a row in csv
+			u = Utente()
+			u.username = row["username"]
+			u.setNewPassword(row["password"])
+			u.description = row["firstname"].capitalize() + " " + row["lastname"].capitalize()
+			u.cognome = row["lastname"]
+			u.nome = row["firstname"]
+			u.role = 'GUEST'
+			u.gruppo_id = row["group_id"]
+			dbsession.add(u)
+			cont += 1
+		dbsession.commit()
+			
+	return "OK",  render_template("ajax_admin_uploadusers_confirm.html", **vars())
 
 @initialize
 def students(session, USER=None):

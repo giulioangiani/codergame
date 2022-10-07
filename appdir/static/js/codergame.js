@@ -3,9 +3,13 @@ $(document).delegate("#btn-upload", "click", function(){
 	
 	var btn = this.id;
 	var fn = $(this).attr("fn");
+	var callback_div_update = $(this).attr("callback_div_update");
 	console.log("fn="+fn);
 	if (fn == 'upload')
 		var url = "/codergame/uploadfile";
+
+	if (fn == 'uploadusers')
+		var url = "/admin/uploadusers/execute";
 
 	if (!$('#codefile').val()) {
 		alert("File non caricato!");
@@ -32,7 +36,12 @@ $(document).delegate("#btn-upload", "click", function(){
 	  success: function(risposta) {
 			var status = risposta["status"];
 			var html = risposta["html"];
-			$("#results-panel").html(html)
+			if (callback_div_update) {
+				$("#"+callback_div_update).html(html)
+			}
+			else {
+				$("#results-panel").html(html)
+			}
 	  },
 	  // ed una per il caso di fallimento
 	  error: function(){
