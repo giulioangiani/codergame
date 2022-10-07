@@ -55,6 +55,19 @@ def groups(session, USER=None):
 	return "OK",  render_template("ajax_admin_lista_gruppi.html", **vars())
 	
 @initialize
+def group_abilitazione(session, mode, object_id, USER=None):
+	gruppo = dbsession.query(Gruppo).get(object_id)
+	if mode == 'on':	# da on a off
+		gruppo.in_gara = 0
+	if mode == 'off':
+		gruppo.in_gara = 1
+	print(gruppo, mode)
+	dbsession.add(gruppo)
+	dbsession.commit()
+	return "OK",  "Mode = " + mode
+
+	
+@initialize
 def submissions(session, USER=None):
 	subtitle = ""
 	pagetitle= " Lista Sottoposizioni"

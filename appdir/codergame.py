@@ -69,11 +69,11 @@ def saveuploadefile(content, quizid, lang, USER):
 
 def compileuploadedfile(fname, lang):
 	# compile
-	print("Compilazione")
+#	print("Compilazione")
 	import subprocess
 	subp = subprocess.run(f"g++ {fname} -o {fname}.o", shell=True)
 	returncode = subp.returncode
-	print(("returncode=", returncode))
+#	print(("returncode=", returncode))
 	return returncode
 
 def testuploadedfile(fname, lang, task, testcase, USER):
@@ -84,18 +84,18 @@ def testuploadedfile(fname, lang, task, testcase, USER):
 	except:
 		pass
 	
-	print("fname = ", fname)
-	print("input = ", testcase.input_text)
-	print("atteso = ", testcase.output_atteso)
+#	print("fname = ", fname)
+#	print("input = ", testcase.input_text)
+#	print("atteso = ", testcase.output_atteso)
 	
 	finput_tmp = "{}/{}.input".format(user_tmp_dir, time.time())
-	print("finput_tmp=", finput_tmp)
+#	print("finput_tmp=", finput_tmp)
 	open(finput_tmp, 'w').write(testcase.input_text)
 	# compile
 	foutput_tmp = "{}/{}.output".format(user_tmp_dir, time.time())
 	import subprocess
 	test_input_output = subprocess.run(f"timeout 1s {fname}.o < {finput_tmp} > {foutput_tmp}", shell=True)
-	print(("test_input_output", test_input_output))
+#	print(("test_input_output", test_input_output))
 	
 	if test_input_output.returncode == 0:
 		output_reale = open(foutput_tmp, 'r').read().strip()
@@ -132,7 +132,9 @@ def testuploadedfile(fname, lang, task, testcase, USER):
 				"puntmax": testcase.punteggio,
 				"corretto": False
 			}
-		
+	
+	print(f"""{USER["username"]}:Task {task.id}: Testcase {testcase.id} : Punti {result["punteggio"]}/{testcase.punteggio} : Corretto {result["corretto"]}""")
+
 	return result	
 		
 @initialize
@@ -142,6 +144,11 @@ def home(session, USER=None):
 	U = getUser(USER)
 	if not U:
 		return "KO", "Not Authorized"
+		
+	if U.gruppo.in_gara == 0:
+		return "OK", render_template("cg_ajax_gruppo_non_in_gara.html", **vars())
+			
+		
 	punteggio_studente = sum([U.getMaxPointsPerTask(task) for task in U.gruppo.tasks])
 	maxpunteggio = sum([t.maxpoints for t in U.gruppo.tasks])
 	return "OK",  render_template("cg_ajax_dashboard.html", **vars())
@@ -163,9 +170,10 @@ def uploadfile(session, USER=None):
 	content = contenuto_codefile.read()
 	taskid = request.form.get("taskid")
 	task = dbsession.query(Task).get(taskid)
-	print("taskid=", taskid)
 	lang = "cpp"
 	U = getUser(USER)
+
+	print(f"{U.username}: attempt {taskid}")
 	
 	# salva il contenuto su file e su DB
 	fname = saveuploadefile(content, taskid, lang, USER)
@@ -193,7 +201,7 @@ def uploadfile(session, USER=None):
 	
 	# leggo quiz
 	testcases = task.testcases
-	print("testcases=", testcases)
+#	print("testcases=", testcases)
 	
 	punteggio = 0
 	puntmax = 0
@@ -204,12 +212,12 @@ def uploadfile(session, USER=None):
 		testcase_result = testuploadedfile(fname, lang, task, testcase, USER)
 
 		tests[ntest] = testcase_result
-		print(f"test {ntest} :  {testcase_result}")
+#		print(f"test {ntest} :  {testcase_result}")
 		punteggio += testcase_result["punteggio"]
 		puntmax += testcase_result["puntmax"]
 
-	print(("puntmax=", puntmax))
-	print(("punteggio=", punteggio))
+#	print(("puntmax=", puntmax))
+#	print(("punteggio=", punteggio))
 	s.punteggio=punteggio
 	dbsession.add(s)
 	dbsession.commit()

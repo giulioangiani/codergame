@@ -68,8 +68,8 @@ class Task(Base):
 	@property
 	def maxpoints(self):
 		# calcolato come somma dei punteggi dei ogni testcase associati
-		print(self.difficolta)
-		print(self.testcases)
+	#	print(self.difficolta)
+	#	print(self.testcases)
 		return sum([tc.punteggio for tc in self.testcases])
 
 	def sottomissioni(self):
@@ -98,6 +98,7 @@ class Gruppo(Base):
 	id = Column(Integer, primary_key=True)
 	nomegruppo = Column(String(100))
 	descgruppo = Column(String(100))
+	in_gara = Column(Integer)
 	studenti = relationship("Utente", backref="gruppo", order_by="Utente.cognome")
 	tasks = relationship('Task', secondary=GruppiTask, backref='gruppo')
 	

@@ -33,6 +33,7 @@ def protected(fnz):
 			return login(*args, **kwargs)
 		global USER
 		USER = session.get("USEROBJ")	# dict userinfo
+		print("USER ", USER["username"], request.url)
 		return fnz(*args, **kwargs)
 	return f
 
@@ -59,7 +60,7 @@ def expire_session(sender, response, **extra):
 #	import importlib
 #	importlib.reload(dashboard)
 #	importlib.reload(models)
-#	importlib.reload(admin)
+	importlib.reload(admin)
 request_finished.connect(expire_session, app)
 
 import dashboard
@@ -90,11 +91,6 @@ def checkUser(username, password):
 					"lang": "IT",
 				},
 			}
-
-@app.route('/protetta')
-@protected
-def protetta():
-	return "protected test page"
 
 @app.route('/')
 @app.route('/home')
@@ -320,6 +316,11 @@ def admin_task_disabilita():
 	(status, html) = admin.task_disabilita(session)
 	return genericJsonResponse(status, html)
 
+@app.route('/admin/group/abilitazione/<mode>/<object_id>', methods=["GET"])
+@protected
+def admin_group_abilitazione(mode, object_id):
+	(status, html) = admin.group_abilitazione(session, mode, object_id)
+	return genericJsonResponse(status, html)
 
 
 
@@ -345,7 +346,7 @@ def settings_update():
 
 def genericJsonResponse(status, html):
 	if models.conn:
-		print("closing ", models.conn)
+		#print("closing ", models.conn)
 		models.conn.close()
 	result = {
 		"status": status,
