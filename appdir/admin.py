@@ -96,7 +96,30 @@ def groups(session, USER=None):
 	pagetitle= " Lista Gruppi"
 	gruppi = dbsession.query(Gruppo).order_by(Gruppo.nomegruppo.asc()).all()
 	return "OK",  render_template("ajax_admin_lista_gruppi.html", **vars())
-	
+
+@initialize
+def group_new(session, USER=None):
+	gruppo = Gruppo()
+	return "OK",  render_template("ajax_admin_group_edit.html", **vars())
+
+@initialize
+def group_update(session, object_id, USER=None):
+	if object_id not in ('', None, "None"):
+		gruppo = dbsession.query(Gruppo).get(object_id)
+	else:
+		gruppo = Gruppo()
+	gruppo.nomegruppo = request.form.get("nomegruppo")
+	gruppo.descgruppo = request.form.get("descgruppo")
+	gruppo.ingara = 0
+	dbsession.add(gruppo)
+	dbsession.commit()
+	return "OK",  "Update correctly"
+
+@initialize
+def group_edit(session, object_id, USER=None):
+	gruppo = dbsession.query(Gruppo).get(object_id)
+	return "OK",  render_template("ajax_admin_group_edit.html", **vars())
+		
 @initialize
 def group_abilitazione(session, mode, object_id, USER=None):
 	gruppo = dbsession.query(Gruppo).get(object_id)

@@ -98,11 +98,12 @@ $(document).delegate(".btn-abilita-disabilita", "click", function(){
 });
 	
 
-$(document).delegate("#scheda_task #btn-modify", "click", function(){
+$(document).delegate("#btn-modify", "click", function(){
 	var task_id = $(this).attr("task_id");
-	var url = "/admin/task/update/"+task_id;
+	var fn = $(this).attr("fn")
+	var url = fn+task_id;
 
-	formvalues = $("#scheda_task .form-group input, #scheda_task .form-group select, #scheda_task .form-group textarea");
+	formvalues = $(".form-group input, .form-group select, .form-group textarea");
 
 	values = {}
 	for (i=0; i<formvalues.length; i++) {

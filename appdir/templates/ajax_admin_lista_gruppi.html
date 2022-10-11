@@ -1,5 +1,8 @@
 {% extends "ajax.html" %}
 {% block content %}
+	<button type="button" id='add-button' class="btn btn-info mb-3 editobject"
+		fn='admin/group/new' _object_id='-1'
+		>Nuovo Gruppo</button>
 
 	<table id='table_gruppi' class='table table-striped'>
 		<thead>
@@ -9,6 +12,7 @@
 				<th>Studenti</th>
 				<th>Tasks</th>
 				<th>In gara</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,7 +42,12 @@
 					{% endif %}
 				
 				</td>
-			</tr>
+				<td>
+					<span class='fa fa-edit fa-2x editobject'
+						fn='admin/group/edit/'
+						_object_id='{{g.id}}' title='edit gruppo'
+						></span>			</tr>
+				</td>
 		{% endfor %}
 		</tbody>
 	</table>	

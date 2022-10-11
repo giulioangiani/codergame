@@ -265,6 +265,24 @@ def admin_groups():
 	(status, html) = admin.groups(session)
 	return genericJsonResponse(status, html)
 
+@app.route('/admin/group/new/<object_id>', methods=["GET"])
+@protected
+def admin_group_new(object_id):
+	(status, html) = admin.group_new(session)
+	return genericJsonResponse(status, html)
+
+@app.route('/admin/group/edit/<object_id>', methods=["GET"])
+@protected
+def admin_group_edit(object_id):
+	(status, html) = admin.group_edit(session, object_id)
+	return genericJsonResponse(status, html)
+	
+@app.route('/admin/group/update/<object_id>', methods=["POST"])
+@protected
+def admin_group_update(object_id):
+	(status, html) = admin.group_update(session, object_id)
+	return genericJsonResponse(status, html)
+	
 @app.route('/admin/submissions', methods=["GET"])
 @protected
 def admin_submissions():

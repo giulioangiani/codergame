@@ -160,11 +160,11 @@ $(document).delegate(".tr_ordering", "click", function(){
 	var table_body = $("#"+table_ref_id+" tbody");
 	for (var i=0; i<rows.length; i++) {
 		var elem = rows[i];
-		console.log(elem.getAttribute("punti_studente"));
-		var order_code = elem.getAttribute("punti_studente");
+		var order_code = parseInt(elem.getAttribute(order_attribute));
 		ordered_rows.push(Array(order_code, elem));
 	}
-	ordered_rows.sort()
+	ordered_rows.sort(function(a, b){return b[0] - a[0]})
+	console.log(ordered_rows)
 	if (mode == 'asc') { 
 		$(this).attr("mode", "desc");
 		ordered_rows.reverse()
@@ -177,7 +177,6 @@ $(document).delegate(".tr_ordering", "click", function(){
 	for (var i=0; i<rows.length; i++) {
 		table_body.append(ordered_rows[i][1]);
 	}
-	
 })
 
 
