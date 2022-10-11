@@ -78,6 +78,8 @@ def students(session, USER=None):
 		dic_results[s] = {}
 		punti_per_studente[s] = 0
 		max_punti_per_studente[s] = 0
+		if not s.gruppo:
+			continue
 		tasks = s.gruppo.tasks
 		for t in tasks:
 			dic_results[s][t] = {}
