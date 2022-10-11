@@ -1,0 +1,48 @@
+{% extends "ajax.html" %}
+{% block content %}
+
+	<div class='p-3'>
+		
+		<form id='scheda_gruppo'>
+			<div class="row mx-n2">
+			  <div class="form-group col-4 pl-2">
+				<label for="exampleInputEmail1">Nome Gruppo</label>
+				<input type="text" class="form-control text-left" id="nomegruppo"  value="{{gruppo.nomegruppo}}">
+			  </div>
+			  <div class="form-group col-4 px-2">
+				<label for="">Descrizione</label>
+				<input type="text" class="form-control text-left" id="descgruppo" value="{{gruppo.descgruppo}}">
+			  </div>
+			  <div class="form-group col-2 px-2">
+				<label for="">In Gara</label>
+				<div>
+				{% if gruppo.in_gara == 1 %}
+						<span class='fa fa-circle fa-2x text-success editobject'></span>
+				{% else %}
+					<span class='fa fa-circle fa-2x text-dark editobject'></span>
+				{% endif %}
+				</div>
+			  </div>
+			</div>  
+			
+			<div id='bottom-panel'>
+			{% if USER.role in ( 'ADMIN') %}
+
+			  <button type="button" id='btn-modify' 
+				fn = "/admin/group/update/"
+				task_id = "{{gruppo.id}}"
+				class="btn btn-success mt-3">Modifica</button>
+				  
+			{% endif %}
+				<span id='text-result'></span>
+				  
+				<button type="button" id='btn-close' class="btn btn-info mt-3 float-right">Chiudi</button>
+			</div>
+			<div id='bottom-msg' class='text-primary'></div>
+		
+		</form>
+	
+	</div>
+
+
+{% endblock %}

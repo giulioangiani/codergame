@@ -26,6 +26,7 @@ def home(session, USER=None):
 def uploadusers(session, USER=None):
 	subtitle = ""
 	pagetitle= "Uploading users"
+	gruppi = dbsession.query(Gruppo).all()
 	return "OK",  render_template("ajax_admin_uploadusers.html", **vars())
 
 @initialize
@@ -36,7 +37,10 @@ def uploadusers_execute(session, USER=None):
 	content = contenuto_codefile.read()
 	fname = MAIN_UPLOAD_USERS_DIR + time.strftime("%Y%m%d_%H%M%S", time.localtime(time.time()))
 	open(fname, 'wb').write(content)
-		
+	
+	group_id = request.form.get('group_id', '')
+	if not group_id:
+		return "KO", "Devi selezionare obbligatoriamente il gruppo "
 	cont = 0
 	with open(fname, 'r') as read_obj:
 		# pass the file object to reader() to get the reader object
@@ -51,7 +55,7 @@ def uploadusers_execute(session, USER=None):
 			u.cognome = row["lastname"]
 			u.nome = row["firstname"]
 			u.role = 'GUEST'
-			u.gruppo_id = row["group_id"]
+			u.gruppo_id = group_id
 			dbsession.add(u)
 			cont += 1
 		dbsession.commit()

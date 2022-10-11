@@ -16,12 +16,12 @@ $(document).delegate("#btn-upload", "click", function(){
 		return false;
 	}
 	
-	
 	var fd = new FormData();
 	var codefile = $('#codefile')[0].files;
 	console.log("codefile : " + codefile)
 	fd.append('codefile',codefile[0]);
 	fd.append('taskid',$("#taskid").val());
+	fd.append('group_id',$("#group_id	").val());
 	
 	$.ajax({
 	  type: "POST",			// il method
