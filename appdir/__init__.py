@@ -282,6 +282,13 @@ def admin_group_edit(object_id):
 def admin_group_update(object_id):
 	(status, html) = admin.group_update(session, object_id)
 	return genericJsonResponse(status, html)
+
+@app.route('/admin/group/removestudent/<group_id>/<user_id>', methods=["GET"])
+@protected
+def admin_group_removestudent(group_id, user_id):
+	(status, html) = admin.group_removestudent(session, group_id, user_id)
+	return genericJsonResponse(status, html)
+	
 	
 @app.route('/admin/submissions', methods=["GET"])
 @protected

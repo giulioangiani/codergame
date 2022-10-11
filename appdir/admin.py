@@ -119,6 +119,16 @@ def group_update(session, object_id, USER=None):
 	dbsession.commit()
 	return "OK",  "Update correctly"
 
+
+@initialize
+def group_removestudent(session, group_id, user_id, USER=None):
+	gruppo = dbsession.query(Gruppo).get(group_id)
+	utente = dbsession.query(Utente).get(user_id)
+	gruppo.studenti.remove(utente)
+	dbsession.add(gruppo)
+	dbsession.commit()
+	return group_edit(session, group_id)
+	
 @initialize
 def group_edit(session, object_id, USER=None):
 	gruppo = dbsession.query(Gruppo).get(object_id)

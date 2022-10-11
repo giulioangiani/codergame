@@ -91,6 +91,10 @@ function saluta() {
 $(document).delegate(".editobject", "click", function(){
 	var fn = $(this).attr("fn");
 	var _object_id = $(this).attr("_object_id");
+	var conferma = $(this).attr("conferma");
+	if (conferma == 1) {
+		if (!confirm("Confermi questa operazione ? ")) return false;
+	}
 	var solofn = $(this).attr("solofn");
 	if (solofn == "1") {
 		var url = "/"+fn
