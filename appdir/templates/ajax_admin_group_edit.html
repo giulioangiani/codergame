@@ -25,36 +25,6 @@
 			  </div>
 			</div>  
 			
-			
-			<div class="form-group col-12 px-2">
-				<table id='table_studenti' class='table table-striped cellbordered'>
-					<thead class="text-center">
-						<tr>
-							<th>Cognome</th>
-							<th>Nome</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-					{% for s in gruppo.studenti %}
-							<tr user_id='{{s.id}}'>
-								<td class='text-left p-2' width="45%">{{s.cognome}}</td>
-								<td class='text-left p-2' width="45%">{{s.nome}}</td>
-								<td class='text-center p-2'>
-									<span class='fa fa-remove fa-2x text-danger editobject'
-										fn='admin/group/removestudent/{{gruppo.id}}'
-										_object_id='{{s.id}}' title='Rimuovi studente dal gruppo'
-										conferma=1
-										></span>
-								</td>
-							</tr>
-					{% endfor %}
-					</tbody>
-				</table>	
-			
-			
-			</div>
-			
 			<div id='bottom-panel'>
 			{% if USER.role in ( 'ADMIN') %}
 
