@@ -252,3 +252,15 @@ def task_addtestcase(session, USER=None):
 	dbsession.add(tc)
 	dbsession.commit()
 	return "OK", "Aggiunto"
+
+@initialize
+def task_export_testcases(session, object_id, USER=None):
+	task = dbsession.query(Task).get(object_id)
+	print(task.testcases)
+	result = []
+	for tc in task.testcases:
+		result.append({
+			"input": tc.input_text,
+			"output": tc.output_atteso
+		})
+	return json.dumps(result)

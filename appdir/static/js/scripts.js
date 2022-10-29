@@ -102,6 +102,12 @@ $(document).delegate(".editobject", "click", function(){
 	else {
 		var url = "/"+fn+"/"+_object_id;
 	}
+	
+	if ($(this).attr("external")) {
+		window.open(url);
+		return false;
+	}
+	
 	var delete_current_row = $(this).attr("delete_current_row");
 	var callbackfn= $(this).attr("callbackfn");
 	$this=$(this);

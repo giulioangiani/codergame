@@ -90,6 +90,11 @@
 				task_id = "{{task.id}}"
 				class="btn btn-success mt-3">Modifica</button>
 				  
+			  <button type="button" id='btn-export' 
+				fn = "admin/task/export/testcases"
+				_object_id = "{{task.id}}"  external=1
+				class="btn btn-warning mt-3 editobject">Esporta Testcases</button>
+
 			{% endif %}
 				<span id='text-result'></span>
 				  
