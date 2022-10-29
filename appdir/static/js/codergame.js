@@ -176,3 +176,7 @@ $(document).delegate("#link_add_testcase", "click", function(){
 
 });
 
+$(document).delegate("#html_text", "keyup", function(){
+	var content = $("#html_text").val();
+	$("#versione_html").html(content);
+});
