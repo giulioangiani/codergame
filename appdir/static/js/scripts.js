@@ -149,9 +149,19 @@ $(document).delegate(".editobject", "click", function(){
 $(document).delegate(".filtrarighe", "click", function(){
 	var table_ref_id = $(this).attr("table_ref_id");
 	var findattribute = $(this).attr("findattribute");
+	var hideothers = $(this).attr("hideothers") == "1"
 	var checked = $(this).prop("checked");
 	console.log(checked);
 	var valore = $(this).attr("valore");
+	
+	if (hideothers) {
+		$("#"+table_ref_id+" tbody tr").hide();
+		$("#"+table_ref_id+" tbody tr["+findattribute+"="+valore+"]").show();
+		$(".filtrarighe").prop("checked", false);
+		$(".filtrarighe[valore="+valore+"]").prop("checked", true);
+		return;
+	}
+	
 //	$("#"+table_ref_id+" tbody tr").show();
 	if (!checked) {		// valore precedente al click
 		$("#"+table_ref_id+" tbody tr["+findattribute+"="+valore+"]").hide();

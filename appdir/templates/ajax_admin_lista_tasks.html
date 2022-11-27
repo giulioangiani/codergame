@@ -9,7 +9,12 @@
 			<div class="form-group col-2">
 				<input class='filtrarighe' findattribute='categoria_id' table_ref_id='table_tasks'
 						valore='{{c.id}}'
-						type='checkbox'  style='width:30px; height:20px' checked>{{c.nomecategoria}} [{{c.tasks|count}}]
+						type='checkbox'  style='width:30px; height:20px' checked>
+						<span class='filtrarighe' findattribute='categoria_id' table_ref_id='table_tasks'
+								valore='{{c.id}}' hideothers=1
+								>
+							{{c.nomecategoria}} [{{c.tasks|count}}]
+						</span>
 			</div>
 		{% endfor %}
 	</div>
