@@ -64,6 +64,8 @@ class Task(Base):
 	testcases = relationship("TestCase", backref="task")
 	categoria_id = Column(ForeignKey('categorie.id'))
 	gruppi = relationship('Gruppo', secondary=GruppiTask, backref='task')
+	cpp_template = Column(Text)
+	python_template = Column(Text)
 	
 	@property
 	def maxpoints(self):

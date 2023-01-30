@@ -201,6 +201,8 @@ def task_update(session, object_id, USER=None):
 	task.difficolta = request.form.get("difficolta")
 	task.categoria_id = request.form.get("categoria_id")
 	task.html_text = request.form.get("html_text")
+	task.cpp_template = request.form.get("cpp_template")
+	task.python_template = request.form.get("python_template")
 	dbsession.add(task)
 	dbsession.commit()
 	return "OK",  "Update correctly"

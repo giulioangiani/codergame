@@ -21,7 +21,7 @@ $(document).delegate("#btn-upload", "click", function(){
 	console.log("codefile : " + codefile)
 	fd.append('codefile',codefile[0]);
 	fd.append('taskid',$("#taskid").val());
-	fd.append('group_id',$("#group_id	").val());
+	fd.append('group_id',$("#group_id").val());
 	
 	$.ajax({
 	  type: "POST",			// il method

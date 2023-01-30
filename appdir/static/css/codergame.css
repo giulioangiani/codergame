@@ -77,3 +77,8 @@ div.quizbox_info {
 	background-color:#FBCE5B
 }
 
+.code_text {
+	font-family: courier;
+	font-weight: bold;
+	font-size: 16px;
+}

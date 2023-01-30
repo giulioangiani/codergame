@@ -332,6 +332,13 @@ def admin_task_update(object_id):
 def admin_task_addtestcase():
 	(status, html) = admin.task_addtestcase(session)
 	return genericJsonResponse(status, html)
+
+
+@app.route('/admin/task/export/testcases/<object_id>', methods=["GET"])
+@protected
+def admin_task_export_testcases(object_id):
+	return admin.task_export_testcases(session, object_id)
+
 	
 @app.route('/admin/task/duplica/<object_id>', methods=["GET"])
 @protected
