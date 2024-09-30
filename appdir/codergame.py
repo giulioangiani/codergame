@@ -94,8 +94,13 @@ def testuploadedfile(fname, lang, task, testcase, USER):
 	# compile
 	foutput_tmp = "{}/{}.output".format(user_tmp_dir, time.time())
 	import subprocess
-	test_input_output = subprocess.run(f"timeout 1s {fname}.o < {finput_tmp} > {foutput_tmp}", shell=True)
-#	print(("test_input_output", test_input_output))
+	
+	if lang == "cpp":
+		test_input_output = subprocess.run(f"timeout 1s {fname}.o < {finput_tmp} > {foutput_tmp}", shell=True)
+	else:
+		test_input_output = subprocess.run(f"timeout 1s python3 {fname} < {finput_tmp} > {foutput_tmp}", shell=True)
+		
+	print(("test_input_output", test_input_output))
 	
 	if test_input_output.returncode == 0:
 		output_reale = open(foutput_tmp, 'r').read().strip()
@@ -170,12 +175,19 @@ def uploadfile(session, USER=None):
 	content = contenuto_codefile.read()
 	taskid = request.form.get("taskid")
 	task = dbsession.query(Task).get(taskid)
-	lang = "cpp"
+	#lang = "cpp"
+	language = request.form.get("language")
 	U = getUser(USER)
 
 	print(f"{U.username}: attempt {taskid}")
 	
 	# salva il contenuto su file e su DB
+	
+	if language == "CPP":
+		lang = "cpp"
+	if language == "PYTHON":
+		lang = "py"
+	
 	fname = saveuploadefile(content, taskid, lang, USER)
 	s = Submission()
 	s.lang=lang
@@ -184,15 +196,16 @@ def uploadfile(session, USER=None):
 	s.task_id=taskid
 	s.user_id=U.id
 	
-	# compilazione
-	compile_return_code = compileuploadedfile(fname, lang)
-	if compile_return_code != 0:
-		errore_compilazione = True
-		s.punteggio=0
-		s.compilazione=0
-		dbsession.add(s)
-		dbsession.commit()
-		return "OK",  render_template("cg_ajax_results_compileerror.html", **vars())
+	# compilazione se in c++
+	if language == "CPP":
+		compile_return_code = compileuploadedfile(fname, lang)
+		if compile_return_code != 0:
+			errore_compilazione = True
+			s.punteggio=0
+			s.compilazione=0
+			dbsession.add(s)
+			dbsession.commit()
+			return "OK",  render_template("cg_ajax_results_compileerror.html", **vars())
 
 	s.compilazione=1
 

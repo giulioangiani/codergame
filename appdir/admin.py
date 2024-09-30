@@ -165,6 +165,18 @@ def submissions_delete(session, submission_id, USER=None):
 	return "OK",  "<span class='m-3 text-success'>Sottomissione cancellata con successo</span>"
 
 @initialize
+def multiple_submissions_delete(session, USER=None):
+	submission_ids = request.form.get("ids", "").split("|")
+	print("submission_ids", submission_ids)
+	for submission_id in submission_ids:
+		submission = dbsession.query(Submission).get(submission_id)
+		dbsession.delete(submission)
+	dbsession.commit()
+	return "OK",  "<span class='m-3 text-success'>Sottomissioni cancellate con successo</span>"
+
+
+
+@initialize
 def tasks(session, USER=None):
 	subtitle = ""
 	pagetitle= " Lista Task "
@@ -266,3 +278,13 @@ def task_export_testcases(session, object_id, USER=None):
 			"output": tc.output_atteso
 		})
 	return json.dumps(result)
+
+
+@initialize
+def task_cancella(session, object_id, USER=None):
+	task = dbsession.query(Task).get(object_id)
+	print(task)
+	if task.sottomissioni() == []:
+		dbsession.delete(task)
+		dbsession.commit()
+	return "OK", "Task cancellato"

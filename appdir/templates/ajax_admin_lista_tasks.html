@@ -22,12 +22,14 @@
 	<table id='table_tasks' class='table table-striped'>
 		<thead>
 			<tr>
+				<th></th>
 				<th>Titolo</th>
 				<th>Sottotitolo</th>
 				<th>Difficolta</th>
 				<th>TestCases</th>
 				<th>Punt.Max</th>
 				<th>Gruppi abilitati</th>
+				<th># Sottoposizioni</th>
 				<th>Categoria</th>
 				<th></th>
 			</tr>
@@ -35,15 +37,6 @@
 		<tbody>
 		{% for t in tasks %}
 			<tr categoria_id='{{t.categoria.id}}'>
-				<td>{{t.titolo}}</td>
-				<td>{{t.sottotitolo}}</td>
-				<td class='text-center'>{{t.difficolta}}</td>
-				<td class='text-center'>{{t.testcases|count}}</td>
-				<td class='text-center'>{{t.maxpoints}}</td>
-				<td>
-					{% for g in t.gruppi %}{{g.nomegruppo}}<br>{% endfor %}
-				</td>
-				<td>{{t.categoria.nomecategoria}}</td>
 				<td>
 					<span class='fa fa-edit fa-2x editobject'
 						fn='admin/task/edit/'
@@ -59,7 +52,29 @@
 						fn='admin/task/duplica/'
 						_object_id='{{t.id}}' title='duplica task'
 						></span>
-
+			
+				</td>
+				<td>{{t.titolo}}</td>
+				<td>{{t.sottotitolo}}</td>
+				<td class='text-center'>{{t.difficolta}}</td>
+				<td class='text-center'>{{t.testcases|count}}</td>
+				<td class='text-center'>{{t.maxpoints}}</td>
+				<td>
+					{% for g in t.gruppi %}{{g.nomegruppo}}<br>{% endfor %}
+				</td>
+				<td>{{t.sottomissioni()|count}}</td>
+				<td>{{t.categoria.nomecategoria}}</td>
+				<td>	
+					{% if t.sottomissioni()|count == 0 %}		
+						<span class='fa fa-trash fa-2x editobject text-danger'
+							fn='admin/task/cancella/'
+							conferma=1
+							_object_id='{{t.id}}' title='elimina task'
+							></span>
+					{% else %}
+						<span class='fa fa-trash fa-2x text-muted'
+							></span>
+					{% endif %}
 				</td>
 			</tr>
 		{% endfor %}

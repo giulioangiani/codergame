@@ -299,8 +299,13 @@ def admin_submissions():
 @app.route('/admin/submission/delete/<submission_id>', methods=["GET"])
 @protected
 def admin_submissions_delete(submission_id):
-	print("QUI")
 	(status, html) = admin.submissions_delete(session, submission_id)
+	return genericJsonResponse(status, html)
+
+@app.route('/admin/submissions/delete', methods=["POST"])
+@protected
+def admin_multiple_submissions_delete():
+	(status, html) = admin.multiple_submissions_delete(session)
 	return genericJsonResponse(status, html)
 
 @app.route('/admin/tasks', methods=["GET"])
@@ -371,6 +376,11 @@ def admin_group_abilitazione(mode, object_id):
 	(status, html) = admin.group_abilitazione(session, mode, object_id)
 	return genericJsonResponse(status, html)
 
+@app.route('/admin/task/cancella/<object_id>', methods=["GET"])
+@protected
+def admin_task_cancella(object_id):
+	(status, html) = admin.task_cancella(session, object_id)
+	return genericJsonResponse(status, html)
 
 
 ### IMPOSTAZIONI

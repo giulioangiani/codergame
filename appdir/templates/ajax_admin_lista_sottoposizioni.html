@@ -1,9 +1,14 @@
 {% extends "ajax.html" %}
 {% block content %}
 
+	<div>
+		<a href='#' class='select_all_checkbox' check_box_class='chk_sottoposizione'>seleziona/deseleziona tutti</a>
+		<a href='#' id="cancella_sottoposizioni_selezionate">cancella_sottoposizioni_selezionate</a>
+	</div>
 	<table id='table_gruppi' class='table'>
 		<thead>
 			<tr>
+				<th></th>
 				<th>Task</th>
 				<th>Utente</th>
 				<th>Data Ora</th>
@@ -23,6 +28,7 @@
 					{% endif %}
 				"
 				>
+				<td><input type='checkbox' class='chk_sottoposizione' id="{{s.id}}"></td>
 				<td>{{s.task().titolo}}</td>
 				<td>{{s.utente().cognome}} {{s.utente().nome}} [{{s.utente().gruppo.nomegruppo}}]</td>
 				<td>{{s.timestamp}}</td>

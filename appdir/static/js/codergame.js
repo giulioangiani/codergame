@@ -22,6 +22,7 @@ $(document).delegate("#btn-upload", "click", function(){
 	fd.append('codefile',codefile[0]);
 	fd.append('taskid',$("#taskid").val());
 	fd.append('group_id',$("#group_id").val());
+	fd.append('language',$("#language").val());
 	
 	$.ajax({
 	  type: "POST",			// il method
@@ -180,3 +181,31 @@ $(document).delegate("#html_text", "keyup", function(){
 	var content = $("#html_text").val();
 	$("#versione_html").html(content);
 });
+
+$(document).delegate("#cancella_sottoposizioni_selezionate", "click", function(){
+	var chk_sottoposizione_checked = $(".chk_sottoposizione:checked");
+	if (!confirm("Confermi la cancellazione delle righe selezionate?")) return false;
+	var ids = Array();
+	chk_sottoposizione_checked.each(function(e) {ids.push($(chk_sottoposizione_checked[e]).attr("id"));})
+	console.log(ids);
+	
+	$.ajax({
+	  type: "POST",			// il method
+	  url: "/admin/submissions/delete",				// la action
+	  dataType: "json",
+	  data: {
+		ids : ids.join("|"),
+	  },
+	  beforeSend: function() {
+	  },
+	  success: function(risposta) {
+		  chk_sottoposizione_checked.each(function(i) {$(chk_sottoposizione_checked[i]).parent().parent().fadeOut("slow")});
+	  },
+	  // ed una per il caso di fallimento
+	  error: function(){
+		  alert("Errore generico in inserimento test case");
+	  }
+	});
+
+});
+

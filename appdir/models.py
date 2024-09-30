@@ -75,7 +75,7 @@ class Task(Base):
 		return sum([tc.punteggio for tc in self.testcases])
 
 	def sottomissioni(self):
-		return dbsession.query(Sottomissioni).filter_by(task_id=self.id).all()
+		return dbsession.query(Submission).filter_by(task_id=self.id).all()
 		
 	def copy(self):
 		t = Task()

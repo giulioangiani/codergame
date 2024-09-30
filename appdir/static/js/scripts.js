@@ -171,6 +171,12 @@ $(document).delegate(".filtrarighe", "click", function(){
 	}
 })
 
+$(document).delegate(".select_all_checkbox", "click", function(){
+	var check_box_class = $(this).attr("check_box_class");
+	$("."+check_box_class).click();
+})
+
+
 $(document).delegate(".tr_ordering", "click", function(){
 	var table_ref_id = $(this).attr("table_ref_id");
 	var order_attribute = $(this).attr("order_attribute");
